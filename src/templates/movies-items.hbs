@@ -1,18 +1,14 @@
-{{#each this}}
-  <li class='movies__item'>
-    <article>
-      <a href='#' class='movies__link' data-name='{{movie-name}}'>
-        <div class='movies__img-wrapper'>
-          <img src='{{movie-image}}' alt='{{tags}}' class='movies__img' />
-        </div>
-        <div class='movies__text-wrapper'>
-          <h3 class='movies__title'>{{movie-name}}</h3>
-          <p class='movies__descr'>
-            <span class='movies__genre'>{{movie-genre}}</span>
-            <span class='movies__year'>{{movie-year}}</span>
-          </p>
-        </div>
-      </a>
-    </article>
+{{#each data}}
+  <li class='list-card__item'>
+    <a href='#' class='list-card__link'>
+      <div class='list-card__image-wrapper'>
+        <img src='https://image.tmdb.org/t/p/original/{{poster_path}}' alt='poster {{title}}' />
+      </div>
+      <div class='list-card__content'>
+        <h2 class='list-card__title'>{{title}}</h2>
+        <p class='list-card__text'>{{genres}}|{{release_date}}
+          <span class='list-card__rating'>{{vote_average}}</span></p>
+      </div>
+    </a>
   </li>
 {{/each}}
