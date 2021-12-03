@@ -14,7 +14,7 @@ by team **"LUCKY CODERS"** :four_leaf_clover: академии GOIT. :rocket:
 
 - [**Front-end developer**: H.Long Nguyen](https://github.com/HLongNguyen0)
 
-- [**Front-end developer**: Igor Titov](https://github.com/ITigor1985)
+- [**Front-end developer**: Igor Tarasov](https://github.com/ITigor1985)
 
 - [**Front-end developerr**: Natalia Stupka](https://github.com/NataliaStupka)
 
