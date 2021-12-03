@@ -1,58 +1,25 @@
-# Parcel boilerplate
+## Website project "Filmoteka"
 
-## Скрытые файлы
+by team **"LUCKY CODERS"** :four_leaf_clover: академии GOIT. :rocket:
 
-Включите отображение скрытых файлов и папок в проводнике своей операционной системы, иначе вы не
-сможете выбрать и скопировать себе файлы настроек проекта, имена которых начинаются с точки.
+Проект по курсу **JavaScript**
 
-## Зависимости
+:man_student: Над проектом работали **9 человек**:
 
-На компьютере должена быть установлена LTS-версия [Node.js](https://nodejs.org/en/) со всеми
-дополнительными инструментами кроме **Chocolatey** - его ставить не нужно.
+- [**Team-lead:** Dmitriy Bondernko](https://github.com/dab82)
 
-## Перед началом работы
+- [**Scrum-master** & **Front-end developer**: Anna Samsonenko](https://github.com/AnnSamsonenko)
 
-Один раз на проект установить все зависимости.
+- [**Front-end developer**: Ekaterina Beliavskaja](https://github.com/beliavskaja)
 
-```shell
-npm ci
-```
+- [**Front-end developer**: H.Long Nguyen](https://github.com/HLongNguyen0)
 
-### Разработка
+- [**Front-end developer**: Igor Titov](https://github.com/ITigor1985)
 
-Запустить режим разработки.
+- [**Front-end developerr**: Natalia Stupka](https://github.com/NataliaStupka)
 
-```shell
-npm run dev
-```
+- [**Front-end developer**: Svetlana Ovcharenko](https://github.com/O-Lana)
 
-Во вкладке браузера перейти по адресу [http://localhost:1234](http://localhost:1234).
+- [**Front-end developer**: Andrey Shevchenko](https://github.com/shevchenko-andrey)
 
-### Деплой
-
-Сборка будет автоматически собирать и деплоить продакшен версию проекта на GitHub Pages, в ветку
-`gh-pages`, каждый раз когда обновляется ветка `main`. Например, после прямого пуша или принятого
-пул-реквеста. Для этого необходимо в файле `package.json` отредактировать поле `homepage` и скрипт
-`build`, заменив `имя_пользователя` и `имя_репозитория` на свои.
-
-```json
-"homepage": "https://имя_пользователя.github.io/имя_репозитория",
-"scripts": {
-  "build": "parcel build src/*.html --public-url /имя_репозитория/"
-},
-```
-
-На всякий случай стоит зайти в настройки репозитория `Settings` > `Pages` и убедиться что продакшен
-версии файлов раздаются из папки `/root` ветки `gh-pages`.
-
-Через какое-то время живую страницу можно будет посмотреть по адресу указанному в отредактированном
-свойстве `homepage`, например
-[https://goitacademy.github.io/parcel-project-template](https://goitacademy.github.io/parcel-project-template).
-
-## Файлы и папки
-
-- Все паршалы файлов стилей должны лежать в папке `src/sass` и импортироваться в
-  `src/sass/main.scss`
-- Изображения добавляйте в папку `src/images`, заранее оптимизировав их. Сборщик просто копирует
-  используемые изображения чтобы не нагружать систему оптимизацией картинок, так как на слабых
-  компьютерах это может занять много времени.
+- [**Front-end developer**: Yevheniia Volkova](https://github.com/YevheniiaVolkova)
