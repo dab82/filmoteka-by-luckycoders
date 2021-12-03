@@ -395,7 +395,7 @@ export function dataFormat(data, genres) {
   return formattedData;
 }
 
-console.log(dataFormat(data, genres));
+// console.log(dataFormat(data, genres));
 const formattedData = dataFormat(data, genres);
 
 import itemsTemplate from '../../templates/movies-items.hbs';
