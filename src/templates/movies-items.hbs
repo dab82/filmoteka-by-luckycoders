@@ -1,0 +1,18 @@
+{{#each this}}
+  <li class='movies__item'>
+    <article>
+      <a href='#' class='movies__link' data-name='{{movie-name}}'>
+        <div class='movies__img-wrapper'>
+          <img src='{{movie-image}}' alt='{{tags}}' class='movies__img' />
+        </div>
+        <div class='movies__text-wrapper'>
+          <h3 class='movies__title'>{{movie-name}}</h3>
+          <p class='movies__descr'>
+            <span class='movies__genre'>{{movie-genre}}</span>
+            <span class='movies__year'>{{movie-year}}</span>
+          </p>
+        </div>
+      </a>
+    </article>
+  </li>
+{{/each}}

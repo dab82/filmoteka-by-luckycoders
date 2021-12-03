@@ -1,0 +1,39 @@
+<div class='modal'>
+  <div class='modal__left-side'>
+    <img src='{{link-to-img}}' alt='{{tags}}' class='modal__img' />
+  </div>
+
+  <div class='modal__right-side'>
+    <h3 class='modal__title'>{{movie-name}}</h3>
+
+    <table class='table'>
+      <tbody class='table__body'>
+        <tr class='table__row'>
+          <td class='table__data'>Vote / Votes</td>
+          <td class='table__data'><span class='table__rate'>{{rating}}</span> / {{rating}}</td>
+        </tr>
+        <tr class='table__row'>
+          <td class='table__data'>Popularity</td>
+          <td class='table__data'>{{popularity}}</td>
+        </tr>
+        <tr class='table__row'>
+          <td class='table__data'>Original Title</td>
+          <td class='table__data'>{{original-name}}</td>
+        </tr>
+        <tr class='table__row'>
+          <td class='table__data'>Genre</td>
+          <td class='table__data'>{{genre}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <h4 class='modal__subtitle'>About</h4>
+    <p class='modal__text'>
+      {{text-descr}}
+    </p>
+
+    <div class='btn__wrapper'>
+      <button class='modal__btn' type='button'>add to Watched</button>
+      <button class='modal__btn' type='button'>add to queue</button>
+    </div>
+  </div>
+</div>
