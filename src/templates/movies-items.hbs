@@ -1,4 +1,4 @@
-{{#each data}}
+{{#each this}}
   <li class='list-card__item'>
     <a href='#' class='list-card__link'>
       <div class='list-card__image-wrapper'>
@@ -6,8 +6,17 @@
       </div>
       <div class='list-card__content'>
         <h2 class='list-card__title'>{{title}}</h2>
-        <p class='list-card__text'>{{genres}}|{{release_date}}
-          <span class='list-card__rating'>{{vote_average}}</span></p>
+        <p class='list-card__text'>
+          {{#each genres}}
+            {{#if @last}}
+              {{this}}
+            {{else}}
+              {{this}},
+            {{/if}}{{/each}}
+          |
+          {{release_date}}
+          <span class='list-card__rating'>{{vote_average}}</span>
+        </p>
       </div>
     </a>
   </li>
