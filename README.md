@@ -1,6 +1,6 @@
 ## Website project "Filmoteka"
 
-by team **"LUCKY CODERS"** :four_leaf_clover: академии GOIT. :rocket:
+by team **"LUCKY:four_leaf_clover:CODERS"** академии GOIT :rocket:
 
 Проект по курсу **JavaScript**
 
