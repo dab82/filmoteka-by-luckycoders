@@ -367,6 +367,10 @@ export function dataFormat(data, genres) {
       item.title = item.name;
     }
 
+    if (item.original_name) {
+      item.original_title = item.original_name;
+    }
+
     if (item.release_date) {
       item.release_date = item.release_date.slice(0, 4);
     } else if (item.first_air_date) {
@@ -390,12 +394,22 @@ export function dataFormat(data, genres) {
     }
 
     item.genres = genresArray;
+
+    delete item.first_air_date;
+    delete item.genre_ids;
+    delete item.adult;
+    delete item.video;
+    delete item.backdrop_path;
+    delete item.media_type;
+    delete item.original_language;
+    delete item.original_name;
+    delete item.origin_country;
+    delete item.name;
   });
 
   return formattedData;
 }
 
-// console.log(dataFormat(data, genres));
 const formattedData = dataFormat(data, genres);
 
 import itemsTemplate from '../../templates/movies-items.hbs';

@@ -1,45 +1,47 @@
-<div class='modal'>
-  <div class='modal__left-side'>
-    <img
-      src='https://image.tmdb.org/t/p/original/{{poster_path}}'
-      alt='poster {{original_title}}'
-      class='modal__img'
-    />
+<div class='modal-window' data-modal-id='{{id}}'>
+  <button type='button' class='modal-window__close-btn' data-modal-close>
+    <span class='material-icons'>close</span>
+  </button>
+  <div class='modal-window__img-wrapper'>
+    <img src='https://image.tmdb.org/t/p/original/{{poster_path}}' alt='poster {{title}}' />
   </div>
-
-  <div class='modal__right-side'>
-    <h3 class='modal__title'>{{title}}</h3>
-
-    <table class='table'>
-      <tbody class='table__body'>
-        <tr class='table__row'>
-          <td class='table__data'>Vote / Votes</td>
-          <td class='table__data'><span class='table__rate'>{{vote_average}}</span>
-            /
-            {{vote_count}}</td>
-        </tr>
-        <tr class='table__row'>
-          <td class='table__data'>Popularity</td>
-          <td class='table__data'>{{popularity}}</td>
-        </tr>
-        <tr class='table__row'>
-          <td class='table__data'>Original Title</td>
-          <td class='table__data'>{{original_title}}</td>
-        </tr>
-        <tr class='table__row'>
-          <td class='table__data'>Genre</td>
-          <td class='table__data'>{{genres}}</td>
-        </tr>
-      </tbody>
+  <div class='modal-window__film-desсriptoin'>
+    <h3 class='modal-window__film-title'>
+      {{title}}
+    </h3>
+    <table class='modal-window__table'>
+      <tr>
+        <td class='modal-window__table-refs'>Vote / Votes</td>
+        <td class='modal-window__table-value'><span
+            class='list-card__rating ml'
+          >{{vote_average}}</span>
+          /
+          {{vote_count}}</td>
+      </tr>
+      <tr>
+        <td class='modal-window__table-refs'>Popularity</td>
+        <td class='modal-window__table-value'>{{popularity}}</td>
+      </tr>
+      <tr>
+        <td class='modal-window__table-refs'>Original Title</td>
+        <td class='modal-window__table-value'>{{original_title}}</td>
+      </tr>
+      <tr>
+        <td class='modal-window__table-refs'>Genre</td>
+        <td class='modal-window__table-value'>
+          {{#each genres}}
+            {{#if @last}}
+              {{this}}
+            {{else}}
+              {{this}},
+            {{/if}}{{/each}}</td>
+      </tr>
     </table>
-    <h4 class='modal__subtitle'>About</h4>
-    <p class='modal__text'>
-      {{overview}}
-    </p>
-
-    <div class='btn__wrapper'>
-      <button class='modal__btn' type='button'>add to Watched</button>
-      <button class='modal__btn' type='button'>add to queue</button>
+    <p class='about'>About</p>
+    <p class='description'>{{overview}}</p>
+    <div class='button-wrapper'>
+      <button class='button button-active'>add to Watched</button>
+      <button class='button'>add to queue</button>
     </div>
   </div>
 </div>
