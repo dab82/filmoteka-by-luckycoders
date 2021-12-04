@@ -50,6 +50,8 @@
   justify-content: $jc;
 }
 
+//! добавлен линейный градиент!!!
+
 // @media screen and (min-device-pixel-ratio: 2) and (min-width: *width*),
 //     screen and (min-resolution: 192dpi) and (min-width: *width*),
 //     screen and (min-resolution: 2dppx) and (min-width: *width*) {
@@ -59,7 +61,8 @@
   @media screen and (min-device-pixel-ratio: 2) and (min-width: map-get($min-widths, $width)),
     screen and (min-resolution: 192dpi) and (min-width: map-get($min-widths, $width)),
     screen and (min-resolution: 2dppx) and (min-width: map-get($min-widths, $width)) {
-    background-image: url($image);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url($image);
+    // background-image: url($image);
   }
 }
 
