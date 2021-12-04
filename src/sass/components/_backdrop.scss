@@ -1,0 +1,89 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.25);
+  &.visually-hidden {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+.modal-window {
+  font-family: Roboto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 280px;
+  padding: 48px 20px 41px;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  .backdrop.visually-hidden & {
+    position: absolute;
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+  }
+}
+
+.modal-window__close-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 10px;
+  right: 10px;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: #ffffff;
+  cursor: pointer;
+}
+.modal-window__film-title {
+  @include font(20px, 500, 23px);
+  margin-bottom: 15px;
+}
+.modal-window__table {
+  border-collapse: collapse;
+  @include font(12px, 500, 16px);
+  margin-bottom: 15px;
+}
+.list-card__rating.ml {
+  margin-left: 0;
+}
+.modal-window__table-refs {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: #8c8c8c;
+}
+.modal-window__table-value {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 40px;
+}
+.modal-window__img-wrapper {
+  margin-bottom: 30px;
+}
+.about {
+  @include font(12px, 500, 16px);
+
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.description {
+  @include font(12px, 500, 20px);
+  margin-bottom: 20px;
+}
+.button-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
