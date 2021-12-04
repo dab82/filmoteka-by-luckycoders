@@ -7,7 +7,7 @@
   @include font(12px, 500, 16px);
   color: var(--text-color);
 }
-.list-card__genre-year {
+.list-card__text {
   @include font(12px, 500, 16px);
   color: var(--brand-orange-color);
 }
@@ -19,7 +19,9 @@
   margin-left: 10px;
 }
 
-.list-card__image-wrapper {
+.list-card__image-wrapper img {
+  height: 402px;
+  width: 280px;
   margin-bottom: 10px;
 }
 
@@ -54,6 +56,11 @@
     &:not(:last-child) {
       margin-bottom: 0px;
     }
+  }
+  .list-card__image-wrapper img {
+    height: 398px;
+    width: 294px;
+    margin-bottom: 10px;
   }
 }
 
