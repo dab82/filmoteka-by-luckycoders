@@ -1,0 +1,57 @@
+.footer {
+  display: block;
+  background-color: #f7f7f7;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.footer-text {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.19;
+  text-align: center;
+
+  color: #545454;
+}
+
+.footer-icon {
+  margin-left: 10px;
+  margin-right: 10px;
+  fill: #ff6b08;
+}
+
+.developers {
+  cursor: pointer;
+  text-decoration: underline;
+
+  &:hover,
+  &:focus {
+    color: blue;
+  }
+}
+
+.footer-container {
+  text-align: center;
+}
+
+// 320+
+@media screen and (min-width: 320px) {
+  .footer-text {
+    margin-bottom: 10px;
+  }
+}
+
+// 768+
+@media screen and (min-width: 768px) {
+  .footer-container {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+// 1024+
+@media screen and (min-width: 1024px) {
+  .footer-container {
+  }
+}
