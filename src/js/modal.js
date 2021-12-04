@@ -10,7 +10,8 @@
     });
     refs.closeModalBtn.addEventListener('click', toggleModal);
   
-    function toggleModal() {
+    function toggleModal(event) {
+      event.preventDefault();
       refs.modal.classList.toggle('visually-hidden');
     }
   })();
