@@ -1,16 +1,9 @@
+//IMPORT CSS
 import './sass/main.scss';
 import 'material-icons/iconfont/material-icons.css';
-// import './js/btt'; // back to top
-import './js/helpers/data-format'; //это временно(Аня)
+
+//IMPORT JS
 import './js/popular-movies-render';
 import './js/modal.js';
 
-
-
-
-
-
-
-
-
-
+// import './js/btt'; // back to top
