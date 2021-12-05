@@ -1,11 +1,12 @@
 import axios from "axios";
 import { API_KEY } from "./common/keys";
 
-const BASE_URL = 'https://api.themoviedb.org'
-// const key = '8467b35301383f6844ef88f323a204bb';
+const BASE_URL_POPULAR = 'https://api.themoviedb.org/3/trending/movie/';
+axios.defaults.baseURL = BASE_URL_POPULAR;
 
-export async function fetchMovies() {
-    const url = `${BASE_URL}/3/trending/movie/day?api_key=${API_KEY}`;
-    return await axios.get(url);
 
+export async function fetchPopularMovies() {
+    const response = await axios.get(`day?api_key=${API_KEY}`);
+    return response.data;
  }
+
