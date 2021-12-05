@@ -88,3 +88,53 @@
   display: flex;
   justify-content: space-between;
 }
+
+@media screen and(min-width:768px) {
+  .modal-window {
+    top: 50%;
+    left: 50%;
+    width: 618px;
+    padding: 42px 29px 40px;
+    display: flex;
+    justify-content: space-between;
+    transform: translate(-50%, -50%);
+  }
+
+  .modal-window__img-wrapper {
+    margin-right: 32px;
+    margin-bottom: 0px;
+  }
+  .modal-window__img-wrapper img {
+    min-width: 264px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .modal-window {
+    top: 50%;
+    left: 50%;
+    width: 882px;
+    padding: 42px 29px 40px;
+    display: flex;
+    justify-content: space-between;
+    transform: translate(-50%, -50%);
+  }
+
+  .modal-window__img-wrapper {
+    margin-right: 30px;
+  }
+  .modal-window__img-wrapper img {
+    min-width: 396px;
+  }
+  .modal-window__film-title {
+    @include font(30px, 500, 35px);
+  }
+
+  .button-wrapper {
+    display: flex;
+    justify-content: start;
+    & > :first-child {
+      margin-right: 15px;
+    }
+  }
+}
