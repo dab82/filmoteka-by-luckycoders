@@ -1,8 +1,8 @@
 import { fetchPopularMovies } from './api-service-popular';
-import itemsTemplate from '../templates/movies-items.hbs';
 import { genres } from './common/genres';
 import { dataFormat } from './helpers/data-format.js';
 import { STORAGE_MAIN_KEY } from './common/keys';
+import { renderListCard } from './helpers/render-list-card';
 
 const refs = {
   popularMovieContainer: document.querySelector('.list-card'),
@@ -28,18 +28,10 @@ getPopularMoviesData();
 function prepareDataForRender(data) {
   //отформатировать с помощью хелпера данные ->
   const formattedData = dataFormat(data, genres);
-  //отправить форматированные данные дальше для рендера->
-  renderMarkup(formattedData);
+  //отрендерить список фильмов->
+  renderListCard(formattedData);
+  //ВАЖНО! вернуть из функции форматированные данные, чтобы отправить в local storage
   return formattedData;
-}
-
-//эта функция чистит ul и рендерит полученные данные
-function renderMarkup(formattedData) {
-  refs.popularMovieContainer.innerHTML = '';
-  //получить разметку из шаблона handlebars(возвращается строка)->
-  const markup = itemsTemplate({ ...formattedData });
-  //наконец-то рендер)))
-  refs.popularMovieContainer.insertAdjacentHTML('afterbegin', markup);
 }
 
 //эта функция сохраняет данные по популярным фильмам в local storage
