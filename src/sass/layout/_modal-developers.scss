@@ -1,0 +1,110 @@
+.basicLightbox {
+  overflow: scroll;
+}
+
+.team-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  margin: -20px;
+
+  @media screen and (max-width: (768px - 1)) {
+    margin-top: 70px;
+  }
+
+  width: 240px;
+
+  background-color: white;
+  border-radius: 15px;
+
+  @media screen and (min-width: 768px) {
+    width: 600px;
+
+    border-radius: 25px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    margin: -30px;
+
+    width: 800px;
+  }
+}
+.team-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin: 20px;
+
+  width: calc((100% - 80px) / 2);
+
+  @media screen and (min-width: 768px) {
+    width: calc((100% - 160px) / 4);
+  }
+
+  @media screen and (min-width: 1024px) {
+    margin: 30px;
+
+    width: calc((100% - 240px) / 4);
+  }
+}
+
+.team-image {
+  margin-bottom: 10px;
+
+  width: 100%;
+
+  border-radius: 50%;
+  box-shadow: 5px 5px 11px -2px black;
+}
+
+.team-name {
+  margin-bottom: 5px;
+
+  font-family: var(--main-font);
+  font-weight: 700;
+}
+
+.team-role {
+  font-family: var(--main-font);
+
+  @media screen and (max-width: (768px - 1)) {
+    font-size: 14px;
+  }
+
+  color: var(--brand-orange-color);
+}
+
+.team-git {
+  position: absolute;
+
+  top: 65px;
+  right: -10px;
+
+  @media screen and (min-width: 768px) {
+    top: 100px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    top: 120px;
+  }
+
+  transform: scale(1);
+  //   @include transition(transform);
+  transition: transform;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.5);
+  }
+}
+
+// footer
+
+.team-modal {
+  text-decoration: underline;
+
+  cursor: pointer;
+}
