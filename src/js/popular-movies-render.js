@@ -1,6 +1,7 @@
 import { fetchPopularMovies } from './api-service-popular';
 import { genres } from './common/genres';
 import { dataFormat } from './helpers/data-format.js';
+import { STORAGE_HOME_KEY } from './common/keys';
 import { STORAGE_MAIN_KEY } from './common/keys';
 import { renderListCard } from './helpers/render-list-card';
 
@@ -16,7 +17,7 @@ async function getPopularMoviesData() {
     //отправить данные дальше для форматирования и рендера->
     const formattedData = prepareDataForRender(response.results);
     //отправить форматированные данные в local storage ->
-    setDataToLocalStorage(formattedData);
+    setDataToLocalStorage(response.page, formattedData);
   } catch (error) {
     console.log('Ошибочка', error);
   }
@@ -35,7 +36,11 @@ function prepareDataForRender(data) {
 }
 
 //эта функция сохраняет данные по популярным фильмам в local storage
-function setDataToLocalStorage(formattedData) {
-  localStorage.removeItem(STORAGE_MAIN_KEY);
+function setDataToLocalStorage(page, formattedData) {
+  if (page === 1) {
+    localStorage.setItem(STORAGE_HOME_KEY, JSON.stringify(formattedData));
+    localStorage.setItem(STORAGE_MAIN_KEY, JSON.stringify(formattedData));
+    return;
+  }
   localStorage.setItem(STORAGE_MAIN_KEY, JSON.stringify(formattedData));
 }
