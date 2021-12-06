@@ -10,4 +10,3 @@ import './js/modal.js';
 import './js/team-modal';
 
 // import './js/btt'; // back to top
-// import '../node_modules/basiclightbox/dist/basicLightbox.min.css';
