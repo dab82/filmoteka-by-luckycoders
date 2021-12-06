@@ -1,3 +1,9 @@
+.bg-scrolling-element-when-modal-open {
+  touch-action: none;
+  -webkit-overflow-scrolling: none;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
 .backdrop {
   position: fixed;
   top: 0;
