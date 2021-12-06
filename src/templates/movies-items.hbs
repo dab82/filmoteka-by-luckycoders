@@ -1,8 +1,20 @@
 {{#each this}}
-  <li class='list-card__item'>
+  <li class='list-card__item animate__animated animate__fadeInUp'>
     <a href='#' class='list-card__link' data-modal-open data-card-id='{{id}}'>
       <div class='list-card__image-wrapper'>
-        <img src='https://image.tmdb.org/t/p/original/{{poster_path}}' alt='poster {{title}}' />
+        {{#if poster_path}}
+          <img
+            src='https://image.tmdb.org/t/p/original/{{poster_path}}'
+            alt='poster {{title}}'
+            loading='lazy'
+          />
+        {{else}}
+          <img
+            src='https://sd.keepcalms.com/i/keep-calm-poster-not-found.png'
+            alt='poster not found'
+            loading='lazy'
+          />
+        {{/if}}
       </div>
       <div class='list-card__content'>
         <h2 class='list-card__title'>{{title}}</h2>
