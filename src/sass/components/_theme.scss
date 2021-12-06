@@ -1,0 +1,14 @@
+.dark main {
+  background: linear-gradient(45deg, rgb(13, 13, 13), rgb(20, 13, 10));
+  border-radius: 20px;
+  border: 3px solid white;
+}
+main {
+  background: linear-gradient(45deg, #f4f6f5, rgb(233, 221, 214));
+  border-radius: 20px;
+  border: 3px solid white;
+}
+
+.dark .list-card__title {
+  color: white;
+}
