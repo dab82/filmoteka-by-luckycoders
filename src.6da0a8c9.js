@@ -69,7 +69,7 @@ module.exports=require("./lib/axios");
 },{"./lib/axios":"nUiQ"}],"KjMj":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.STORAGE_INPUT_KEY=exports.STORAGE_QUEUE_KEY=exports.STORAGE_WATCHED_KEY=exports.STORAGE_MAIN_KEY=exports.API_KEY=void 0;const e="8467b35301383f6844ef88f323a204bb";exports.API_KEY=e;const s="mainItems";exports.STORAGE_MAIN_KEY="mainItems";const t="watchedMovies";exports.STORAGE_WATCHED_KEY="watchedMovies";const o="queueMovies";exports.STORAGE_QUEUE_KEY="queueMovies";const E="inputSearchMovies";exports.STORAGE_INPUT_KEY=E;
 },{}],"OQJ0":[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.fetchPopularMovies=o;var e=a(require("axios")),t=require("./common/keys");function a(e){return e&&e.__esModule?e:{default:e}}const r="https://api.themoviedb.org/3/trending/movie/";async function o(){return(await e.default.get(`day?api_key=${t.API_KEY}`)).data}e.default.defaults.baseURL=r;
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.fetchPopularMovies=a;var e=r(require("axios")),t=require("./common/keys");function r(e){return e&&e.__esModule?e:{default:e}}const o="https://api.themoviedb.org/3/trending/movie/day";async function a(){return(await e.default.get(`${o}?api_key=${t.API_KEY}`)).data}
 },{"axios":"dZBD","./common/keys":"KjMj"}],"DV2l":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.genres=void 0;const e=[{id:28,name:"Action"},{id:12,name:"Adventure"},{id:16,name:"Animation"},{id:35,name:"Comedy"},{id:80,name:"Crime"},{id:99,name:"Documentary"},{id:18,name:"Drama"},{id:10751,name:"Family"},{id:14,name:"Fantasy"},{id:36,name:"History"},{id:27,name:"Horror"},{id:10402,name:"Music"},{id:9648,name:"Mystery"},{id:10749,name:"Romance"},{id:878,name:"Sci-Fi"},{id:10770,name:"TV Movie"},{id:53,name:"Thriller"},{id:10752,name:"War"},{id:37,name:"Western"}];exports.genres=e;
 },{}],"p0GA":[function(require,module,exports) {
@@ -91,4 +91,4 @@ const e=setInterval(()=>{if(null!==localStorage){const t={body:document.querySel
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("material-icons/iconfont/material-icons.css"),require("animate.css"),require("./sass/main.scss"),require("./js/popular-movies-render"),require("./js/modal.js");
 },{"material-icons/iconfont/material-icons.css":"VyAM","animate.css":"TOx8","./sass/main.scss":"clu1","./js/popular-movies-render":"xISP","./js/modal.js":"RSqK"}]},{},["Focm"], null)
-//# sourceMappingURL=/filmoteka-by-luckycoders/src.890bebc1.js.map
+//# sourceMappingURL=/filmoteka-by-luckycoders/src.6da0a8c9.js.map
