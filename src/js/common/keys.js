@@ -3,3 +3,4 @@ export const STORAGE_HOME_KEY = 'home-page-items';
 export const STORAGE_MAIN_KEY = 'active-search-items';
 export const STORAGE_WATCHED_KEY = 'watched-movies';
 export const STORAGE_QUEUE_KEY = 'queue-movies';
+export const STORAGE_SELECTED_KEY = 'selected-movie';
