@@ -1,6 +1,7 @@
 //IMPORT CSS
-import './sass/main.scss';
 import 'material-icons/iconfont/material-icons.css';
+import 'animate.css';
+import './sass/main.scss';
 
 //IMPORT JS
 import './js/popular-movies-render';
