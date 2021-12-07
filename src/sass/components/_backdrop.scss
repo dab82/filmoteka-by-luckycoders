@@ -1,3 +1,9 @@
+.bg-scrolling-element-when-modal-open {
+  touch-action: none;
+  -webkit-overflow-scrolling: none;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
 .backdrop {
   position: fixed;
   top: 0;
@@ -125,6 +131,7 @@
   }
   .modal-window__img-wrapper img {
     min-width: 396px;
+    max-width: 397px;
   }
   .modal-window__film-title {
     @include font(30px, 500, 35px);

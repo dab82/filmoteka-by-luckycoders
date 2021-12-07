@@ -3,7 +3,19 @@
     <span class='material-icons'>close</span>
   </button>
   <div class='modal-window__img-wrapper'>
-    <img src='https://image.tmdb.org/t/p/original/{{poster_path}}' alt='poster {{title}}' />
+    {{#if poster_path}}
+      <img
+        src='https://image.tmdb.org/t/p/original/{{poster_path}}'
+        alt='poster {{title}}'
+        loading='lazy'
+      />
+    {{else}}
+      <img
+        src='https://sd.keepcalms.com/i/keep-calm-poster-not-found.png'
+        alt='poster not found'
+        loading='lazy'
+      />
+    {{/if}}
   </div>
   <div class='modal-window__film-desсriptoin'>
     <h3 class='modal-window__film-title'>

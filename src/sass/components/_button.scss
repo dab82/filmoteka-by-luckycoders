@@ -29,8 +29,7 @@
   color: var(--primary-white-color);
 }
 
-// @media screen and (min-width: 320px) {
-//   .button {
-//     min-width: 136px;
-//   }
-// }
+.button-theme {
+  border-radius: 50px;
+  color: var(--primary-white-color);
+}

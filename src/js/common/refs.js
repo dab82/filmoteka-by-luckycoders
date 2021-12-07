@@ -1,4 +1,6 @@
 export const refs = {
-    menuLinkCurrent: document.querySelector('.menu__link')
+  listContainer: document.querySelector('.list-card'),
+  backdrop: document.querySelector('.backdrop'),
+  pagination: document.querySelector('.tui-pagination'),
 };
 
