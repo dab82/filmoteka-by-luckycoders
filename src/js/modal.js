@@ -1,4 +1,4 @@
-    import {renderModal} from './helpers/render-modal'
+    import {renderModal} from './helpers/render-modal';
       if (localStorage === null){
         return
       }else{
