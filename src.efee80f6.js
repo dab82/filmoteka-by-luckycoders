@@ -107,4 +107,4 @@ toggleThemeBtm.onclick=(()=>{document.querySelector("html").classList.toggle("da
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("material-icons/iconfont/material-icons.css"),require("animate.css"),require("./sass/main.scss"),require("basiclightbox/dist/basicLightbox.min.css"),require("./js/popular-movies-render"),require("./js/modal.js"),require("./js/team-modal"),require("./js/theme");
 },{"material-icons/iconfont/material-icons.css":"VyAM","animate.css":"TOx8","./sass/main.scss":"clu1","basiclightbox/dist/basicLightbox.min.css":"TOx8","./js/popular-movies-render":"xISP","./js/modal.js":"RSqK","./js/team-modal":"SVxB","./js/theme":"qwQt"}]},{},["Focm"], null)
-//# sourceMappingURL=/filmoteka-by-luckycoders/src.49ff25a8.js.map
+//# sourceMappingURL=/filmoteka-by-luckycoders/src.efee80f6.js.map
