@@ -18,7 +18,10 @@ const markupTeamCard = developers
   })
   .join('');
 
-const markupModal = `<div class="team-wrapper">${markupTeamCard}</div>`;
+const markupModal = `<div class="team-wrapper">
+<p class="team-title">LUCKY&#127808;CODERS</p>
+${markupTeamCard}
+</div>`;
 const container = document.querySelector('.developers');
 
 container.addEventListener('click', openModal);
