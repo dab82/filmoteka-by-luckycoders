@@ -30,7 +30,7 @@
         }   
         
         
-        function toggleModal(event) {
+        function toggleModal() {
           event.preventDefault();           
           refs.modal.classList.toggle('visually-hidden');
           refs.body.classList.toggle('bg-scrolling-element-when-modal-open');
