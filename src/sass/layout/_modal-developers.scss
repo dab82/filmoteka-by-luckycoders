@@ -2,11 +2,41 @@
   overflow: scroll;
 }
 
-.team-wrapper {
-  display: flex;
-  flex-wrap: wrap;
+.team-title {
+  font-size: 20px;
+  font-weight: bold;
+  max-width: 600px;
+  margin: 0 auto;
 
+  @media screen and (min-width: 768px) {
+    font-size: 40px;
+  }
+
+  &:hover,
+  &:focus {
+    transform: scale(1.2);
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    max-width: 100%;
+    height: 4px;
+    background-color: var(--brand-orange-color);
+    margin: 0 auto;
+    margin-top: 5px;
+  }
+}
+.team-modal {
+  position: relative;
+  top: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
   margin: -20px;
+  text-align: center;
+  text-decoration: none;
 
   @media screen and (max-width: (768px - 1)) {
     margin-top: 70px;
@@ -20,7 +50,7 @@
   @media screen and (min-width: 768px) {
     width: 600px;
 
-    border-radius: 25px;
+    border-radius: 15px;
   }
 
   @media screen and (min-width: 1024px) {
@@ -28,6 +58,12 @@
 
     width: 800px;
   }
+}
+.team-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
 }
 .team-card {
   position: relative;
@@ -41,13 +77,13 @@
   width: calc((100% - 80px) / 2);
 
   @media screen and (min-width: 768px) {
-    width: calc((100% - 160px) / 4);
+    width: calc((100% - 160px) / 3);
   }
 
   @media screen and (min-width: 1024px) {
     margin: 30px;
 
-    width: calc((100% - 240px) / 4);
+    width: calc((100% - 240px) / 3);
   }
 }
 
@@ -62,7 +98,6 @@
 
 .team-name {
   margin-bottom: 5px;
-
   font-family: var(--main-font);
   font-weight: 700;
 }
@@ -79,17 +114,18 @@
 
 .team-git {
   position: absolute;
-
-  top: 65px;
+  cursor: pointer;
   right: -10px;
 
-  @media screen and (min-width: 768px) {
-    top: 100px;
-  }
+  // top: 65px;
 
-  @media screen and (min-width: 1024px) {
-    top: 120px;
-  }
+  // @media screen and (min-width: 768px) {
+  //   // top: 100px;
+  // }
+
+  // @media screen and (min-width: 1024px) {
+  //   // top: 120px;
+  // }
 
   transform: scale(1);
   //   @include transition(transform);
@@ -99,12 +135,4 @@
   &:focus {
     transform: scale(1.5);
   }
-}
-
-// footer
-
-.team-modal {
-  text-decoration: underline;
-
-  cursor: pointer;
 }
