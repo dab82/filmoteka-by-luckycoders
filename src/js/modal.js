@@ -1,7 +1,10 @@
     import {renderModal} from './helpers/render-modal';
+    import {STORAGE_MAIN_KEY} from './common/keys';
+    import {STORAGE_SELECTED_KEY} from './common/keys'
+      
+      let data = [];
 
-    
-      if (localStorage === null){
+      if (localStorage.getItem(STORAGE_MAIN_KEY) === null){
         
       }else{
         const refs = {
@@ -13,21 +16,24 @@
         
         refs.openModal.addEventListener("click", selectFilm);
         
-        let data
+        
     
         function selectFilm(event){
           if(event.target !== event.currentTarget){ 
             
             let element = findAncestor(event.target, '.list-card__link'); 
             const elementId = element.getAttribute("data-card-id")
-            const dataLS = JSON.parse(localStorage.getItem('home-page-items') || localStorage.getItem('active-search-items'));
-             data = dataLS.filter(dat => dat.id == elementId)             
-             
+            const dataLS = JSON.parse(localStorage.getItem(STORAGE_MAIN_KEY));
+             data = dataLS.filter(dat => dat.id == elementId)  
+
+             setDataToLocalStorage(data);
              renderModal(...data);
              toggleModal(event)
 
              const closeModalBtn = document.querySelector('[data-modal-close]');
              closeModalBtn.addEventListener('click', toggleModal);
+             closeModalBtn.addEventListener('click', removeLocalStorage);
+             
           }
         }   
         
@@ -43,6 +49,14 @@
           while ((element = element.parentElement) && !((element.matches || element.matchesSelector).call(element,sel)));
           return element;
         };
+
+        function setDataToLocalStorage(data) {          
+            localStorage.setItem(STORAGE_SELECTED_KEY, JSON.stringify(data));            
+        }
+
+        function removeLocalStorage(){
+          localStorage.removeItem(STORAGE_SELECTED_KEY);
+        }
        
       }
       
