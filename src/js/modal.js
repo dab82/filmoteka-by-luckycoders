@@ -1,6 +1,8 @@
     import {renderModal} from './helpers/render-modal';
+
+    
       if (localStorage === null){
-        return;
+        
       }else{
         const refs = {
           body: document.querySelector('body'),
