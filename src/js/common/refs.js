@@ -3,3 +3,4 @@ export const refs = {
   backdrop: document.querySelector('.backdrop'),
   pagination: document.querySelector('.tui-pagination'),
 };
+

@@ -7,14 +7,9 @@
   }
 
   background-repeat: no-repeat;
+  background-position: 50% 50%;
   background-size: cover;
-
-  @include min-width('medium') {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url(../images/home/home_768.jpg);
-
-    @include retina('../images/home/home_768@2x.jpg', 'medium');
-  }
+  height: 230px;
 
   @include min-width('medium') {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
@@ -31,14 +26,42 @@
   }
 }
 
+.page-lib {
+  @include min-width('small') {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url(../images/library/my-library_320.jpg);
+
+    @include retina('../images/library/my-library_320@2x.jpg', 'small');
+  }
+
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  height: 230px;
+
+  @include min-width('medium') {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url(../images/library/my-library_768.jpg);
+
+    @include retina('../images/library/my-library_768@2x.jpg', 'medium');
+  }
+
+  @include min-width('large') {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url(../images/library/my-library_1024.jpg);
+
+    @include retina('../images/library/my-library_1024@2x.jpg', 'large');
+  }
+}
+
 .header-container {
   padding-top: 46px;
   padding-bottom: 97px;
 
   //my-library
-  @include min-width('large') {
-    padding-bottom: 65px;
-  }
+  // @include min-width('large') {
+  //   padding-bottom: 65px;
+  // }
 }
 //?
 .logo {
@@ -67,9 +90,9 @@
   margin-bottom: 43px;
 
   //my library
-  @include min-width('large') {
-    margin-bottom: 51px;
-  }
+  // @include min-width('large') {
+  //   margin-bottom: 51px;
+  // }
 }
 
 .menu {
@@ -88,12 +111,16 @@
   margin-right: 39px;
 }
 
-.menu__link:hover,
-.menu__link:focus {
-  padding: 5px;
-  border: 1px solid var(--brand-orange-color);
-  border-radius: 5px;
-  box-shadow: inset 0 0 10px 5px rgba(255, 107, 8, 0.247);
+.menu__link:hover::after,
+.menu__link:focus::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 3px;
+  // background-color: var(--brand-orange-color);
+  background-color: rgba(255, 107, 8, 0.233);
 }
 
 .menu__link.current::after {

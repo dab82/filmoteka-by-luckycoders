@@ -4,13 +4,13 @@
   min-width: 130px;
   height: 44px;
   padding: 14px 0 12px 0;
-  border: 1px solid var(--text-color);
+  border: 1px solid var(--primary-white-color);
   //   border: 1px solid black;
   box-sizing: border-box;
   border-radius: 5px;
   outline: none;
   @include font(12px, 500, 16px);
-  color: var(--text-color);
+  color: var(--primary-white-color);
   //   color: black;
   font-family: var(--main-font);
   text-transform: uppercase;

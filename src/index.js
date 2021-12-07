@@ -8,7 +8,9 @@ import './sass/main.scss';
 //IMPORT JS
 import './js/popular-movies-render';
 import './js/modal.js';
+import './js/header.js';
 import './js/team-modal';
+
 
 // import './js/btt'; // back to top
 
