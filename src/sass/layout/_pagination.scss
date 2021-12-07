@@ -1,41 +1,82 @@
 .tui-pagination {
-  width: 280px;
-  margin: 40px auto 0px auto;
+  height: 40px;
   display: flex;
-  align-items: center;
   justify-content: center;
+  margin: 40px 0 0 0;
   @include min-width('medium') {
-    width: 374px;
-    margin: 50px auto 0px auto;
+    margin: 50px 0 0 0;
   }
 }
 
-.tui-page-btn.tui-first,
-.tui-page-btn.tui-last,
-.tui-page-btn.tui-next-is-ellip.tui-last-child,
-.tui-page-btn.tui-prev-is-ellip.tui-first-child {
+.tui-page-btn.tui-first.hide-first,
+.tui-page-btn.tui-first.tui-is-disabled,
+.tui-page-btn.tui-last.hide-last,
+.tui-page-btn.tui-last.tui-is-disabled,
+.tui-page-btn.tui-next-is-ellip.change-next,
+.tui-page-btn.tui-prev-is-ellip.change-prev {
   display: none;
 }
 
 @include min-width('medium') {
-  .tui-page-btn.tui-next-is-ellip.tui-last-child,
-  .tui-page-btn.tui-prev-is-ellip.tui-first-child {
+  .tui-page-btn.tui-next-is-ellip.change-next,
+  .tui-page-btn.tui-prev-is-ellip.change-prev {
     display: flex;
   }
 }
 
-.tui-page-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  font-family: var(--main-font);
-  @include font(12px, 400, 16px);
+.tui-pagination .tui-next {
+  margin-left: 0;
 }
 
-.tui-page-btn.tui-is-selected {
-  background-color: var(--brand-orange-color);
-  color: var(--primary-white-color);
+.tui-pagination .tui-prev {
+  margin-right: 0;
+}
+
+.tui-pagination .tui-page-btn {
+  display: flex;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  width: 40px;
+  height: 40px;
   border-radius: 5px;
+  color: var(--text-color);
+  font-family: var(--main-font);
+  @include font(12px, 500, 16px);
+  transition: all 250ms ease-in-out;
+  &:hover {
+    background: var(--brand-orange-color);
+    color: var(--primary-white-color);
+  }
+}
+
+.tui-pagination .tui-is-selected {
+  color: var(--primary-white-color);
+  background: var(--brand-orange-color);
+  border-color: var(--brand-orange-color);
+}
+
+.tui-pagination .tui-is-disabled:hover {
+  background: transparent;
+  border: none;
+}
+
+.tui-pagination .tui-prev-is-ellip:hover,
+.tui-pagination .tui-next-is-ellip:hover,
+.tui-pagination .hide-prev:hover,
+.tui-pagination .hide-next:hover {
+  background: rgba(255, 107, 8, 0.2);
+}
+
+.tui-pagination .tui-is-selected:hover {
+  background: var(--brand-orange-color);
+}
+
+.tui-pagination .tui-ico-ellip {
+  margin-top: 0;
+}
+
+.tui-pagination .tui-first-child.tui-is-selected {
+  border-left: none;
 }

@@ -1,4 +1,5 @@
 //IMPORT CSS
+import 'tui-pagination/dist/tui-pagination.css';
 import 'material-icons/iconfont/material-icons.css';
 import 'animate.css';
 import 'basiclightbox/dist/basicLightbox.min.css';
