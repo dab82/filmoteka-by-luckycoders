@@ -19,7 +19,7 @@ const markupTeamCard = developers
   .join('');
 
 const markupModal = `<div class="team-wrapper">${markupTeamCard}</div>`;
-const container = document.querySelector('.js-team-modal');
+const container = document.querySelector('.developers');
 
 container.addEventListener('click', openModal);
 
