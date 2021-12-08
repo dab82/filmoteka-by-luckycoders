@@ -32,16 +32,14 @@ if (localStorage.getItem(STORAGE_MAIN_KEY) === null) {
       refs.modal.addEventListener('click', closeBackdrop);
 
       function closeModal() {
-        refs.modal.classList.toggle('is-hidden');
-        refs.body.classList.toggle('bg-scrolling-element-when-modal-open');
+        addClassIshidden();
         removeLocalStorage();
         closeModalBtn.removeEventListener('click', closeModal);
       }
 
       function toggleModal(event) {
         event.preventDefault();
-        refs.modal.classList.toggle('is-hidden');
-        refs.body.classList.toggle('bg-scrolling-element-when-modal-open');
+        removeClassIshidde();
         document.addEventListener('keydown', closeModalEsc);        
       }
     
@@ -62,12 +60,10 @@ if (localStorage.getItem(STORAGE_MAIN_KEY) === null) {
     
       function closeBackdrop(event) {
         
-        if(event.target === refs.modal){
-        refs.modal.classList.toggle('is-hidden');
-        refs.body.classList.toggle('bg-scrolling-element-when-modal-open');
-        removeLocalStorage();
-        document.removeEventListener('keydown', closeModalEsc);
-        refs.modal.removeEventListener('click', closeBackdrop);
+        if(event.target === refs.modal){          
+          addClassIshidden();
+          document.removeEventListener('keydown', closeModalEsc);
+          refs.modal.removeEventListener('click', closeBackdrop);
         }
         
       }
@@ -76,12 +72,18 @@ if (localStorage.getItem(STORAGE_MAIN_KEY) === null) {
         if (key === 'Escape' && !refs.modal.classList.contains('is-hidden')) {
           removeLocalStorage();
           document.removeEventListener('keydown', closeModalEsc);
-          refs.modal.classList.toggle('is-hidden');
-          refs.body.classList.toggle('bg-scrolling-element-when-modal-open');
-          
-         closeModalBtn.removeEventListener('click', closeModal);
-         refs.modal.removeEventListener('click', closeBackdrop);
+          addClassIshidden();          
+          closeModalBtn.removeEventListener('click', closeModal);
+          refs.modal.removeEventListener('click', closeBackdrop);
         }
+      }
+      function addClassIshidden(){
+        refs.modal.classList.add('is-hidden');
+          refs.body.classList.add('bg-scrolling-element-when-modal-open');
+      }
+      function removeClassIshidde(){
+        refs.modal.classList.remove('is-hidden');
+          refs.body.classList.remove('bg-scrolling-element-when-modal-open');
       }
     }
   }
