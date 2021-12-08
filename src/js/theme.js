@@ -1,6 +1,7 @@
 toggleThemeBtm.onclick = () => {
-    document.querySelector('html').classList.toggle('dark')
-    toggleThemeBtm.innerText = document.querySelector('html').classList.contains('dark') ? "chenge a theme" : "chenge a theme"
-    localStorage.theme = document.querySelector('html').className || "light"
-}
-
+  document.body.classList.toggle('dark');
+  toggleThemeBtm.innerText = document.body.classList.contains('dark')
+    ? 'change a theme'
+    : 'change a theme';
+  localStorage.theme = document.body.className || 'light';
+};

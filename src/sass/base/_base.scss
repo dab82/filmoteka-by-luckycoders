@@ -6,11 +6,9 @@
 html,
 body {
   scroll-behavior: smooth;
-  height: 100%;
 }
 
 body {
-  -webkit-font-smoothing: antialiased;
   font-family: var(--main-font);
   color: var(--text-color);
 }
