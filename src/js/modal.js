@@ -67,6 +67,7 @@
 
         function closeBackdrop(){
           refs.backdrop.classList.toggle('visually-hidden');
+          refs.body.classList.toggle('bg-scrolling-element-when-modal-open');
           removeLocalStorage();
           document.removeEventListener('keydown', closeModalEsc);
         }        
