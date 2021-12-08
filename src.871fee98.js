@@ -114,4 +114,4 @@ const t=document.querySelector("#theme-switch-toggle"),e={LIGHT:"light-theme",DA
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("tui-pagination/dist/tui-pagination.css"),require("material-icons/iconfont/material-icons.css"),require("animate.css"),require("basiclightbox/dist/basicLightbox.min.css"),require("./sass/main.scss"),require("./js/popular-movies-render"),require("./js/modal.js"),require("./js/header.js"),require("./js/team-modal"),require("./js/theme");
 },{"tui-pagination/dist/tui-pagination.css":"UYQs","material-icons/iconfont/material-icons.css":"VyAM","animate.css":"UYQs","basiclightbox/dist/basicLightbox.min.css":"UYQs","./sass/main.scss":"clu1","./js/popular-movies-render":"xISP","./js/modal.js":"RSqK","./js/header.js":"cGsR","./js/team-modal":"SVxB","./js/theme":"qwQt"}]},{},["Focm"], null)
-//# sourceMappingURL=/filmoteka-by-luckycoders/src.5697894d.js.map
+//# sourceMappingURL=/filmoteka-by-luckycoders/src.871fee98.js.map
