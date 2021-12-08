@@ -9,5 +9,8 @@ export const refs = {
   libLink: document.querySelector('.lib-link'),
   watchedBtn: document.querySelector('.watched-btn'),
   queueBtn: document.querySelector('.queue-btn'),
+  btnTopRated: document.querySelector('[data-action="top rated"]'),
+  btnPopular: document.querySelector('[data-action="popular"]'),
+  gallery: document.querySelector('.movies'),
 };
 
