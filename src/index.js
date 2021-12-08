@@ -13,4 +13,4 @@ import './js/team-modal';
 
 // import './js/btt'; // back to top
 
-import './js/theme';
+// import './js/theme';

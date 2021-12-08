@@ -1,43 +1,50 @@
 <header class="page-header">
-    <div class="container header-container">
-        <div class="nav-section">
-        <a href="./index.html" class="logo">
-            <svg class="logo__icon" width="24" height="24">
-                <use href="./images/sprite.svg#icon-film"></use>
-            </svg>
-            <span class="logo__title">Filmoteka</span>
-        </a>
-        <nav class="navigation">
-            <ul class="menu">
-                <li class="menu__item">
-                    <a href="#" class="menu__link home-link current">Home</a>
-                </li>
-                <li class="menu__item">
-                    <a href="#" class="menu__link lib-link">my library</a>
-                </li>
-            </ul>
-        </nav>
-        </div>
+  <div class="container header-container">
+    <div class="nav-section">
+      <a href="./index.html" class="logo">
+        <svg class="logo__icon" width="24" height="24">
+          <use href="./images/sprite.svg#icon-film"></use>
+        </svg>
+        <span class="logo__title">Filmoteka</span>
+      </a>
+      <nav class="navigation">
+        <ul class="menu">
+          <li class="menu__item">
+            <a href="#" class="menu__link home-link current">Home</a>
+          </li>
+          <li class="menu__item">
+            <a href="#" class="menu__link lib-link">my library</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
 
-        <div class="header-search">
-        <form class="search-form">
-            <input type="text" class="input" name="searchQuery" autocomplete="off" placeholder="Поиск фильмов" />
-            <button class="search__btn" type="submit" title="Go!">
-                <svg class="search__icon">
-                    <use href="./images/sprite.svg#icon-search" width="12" height="12"></use>
-                </svg>
-            </button>
-        </form>
-        </div>
+    <div class="header-search">
+      <form class="search-form">
+        <input
+          type="text"
+          class="input"
+          name="searchQuery"
+          autocomplete="off"
+          placeholder="Поиск фильмов"
+        />
+        <button class="search__btn" type="submit" title="Go!">
+          <svg class="search__icon">
+            <use href="./images/sprite.svg#icon-search" width="12" height="12"></use>
+          </svg>
+        </button>
+      </form>
+    </div>
+
 
     <!-- <div>
-        <button id="toggleThemeBtm" class=" menu__link button button-theme">Chenge a theme</button>
+      <button id="toggleThemeBtm" class="menu__link button button-theme" type="button">
+        Change a theme
+      </button>
     </div> -->
-      
 
-        <p class="notify-text no-success"></p>
-
-        <p class="notify-text success"></p>
+    <p class="notify-text no-success"></p>
+    <p class="notify-text success"></p>
 
         <ul class="btn__list visually-hidden">
             <li class="watched-btn button button-active">Watched</li>
@@ -45,3 +52,4 @@
         </ul>
     </div>
 </header> 
+
