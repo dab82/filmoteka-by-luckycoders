@@ -12,6 +12,7 @@
           link: document.querySelector('.list-card__link'),
           openModal:  document.querySelector('.list-card'),          
           modal: document.querySelector('[data-modal]'),
+          backdrop: document.querySelector('.backdrop'),
         };     
         
         refs.openModal.addEventListener("click", selectFilm);
@@ -31,9 +32,15 @@
              toggleModal(event)
 
              const closeModalBtn = document.querySelector('[data-modal-close]');
-             closeModalBtn.addEventListener('click', toggleModal);
-             closeModalBtn.addEventListener('click', removeLocalStorage);
-             
+             closeModalBtn.addEventListener('click', closeModal);            
+             refs.backdrop.addEventListener('click', closeBackdrop);
+
+
+             function closeModal(){
+              closeModalBtn.classList.toggle('visually-hidden');
+              removeLocalStorage();
+              closeModalBtn.removeEventListener('click', closeModal); 
+            }
           }
         }   
         
@@ -42,6 +49,7 @@
           event.preventDefault();           
           refs.modal.classList.toggle('visually-hidden');
           refs.body.classList.toggle('bg-scrolling-element-when-modal-open');
+          document.addEventListener('keydown', closeModalEsc);
         }
 
         
@@ -53,10 +61,26 @@
         function setDataToLocalStorage(data) {          
             localStorage.setItem(STORAGE_SELECTED_KEY, JSON.stringify(data));            
         }
-
         function removeLocalStorage(){
           localStorage.removeItem(STORAGE_SELECTED_KEY);
         }
+
+        function closeBackdrop(){
+          refs.backdrop.classList.toggle('visually-hidden');
+          removeLocalStorage();
+          document.removeEventListener('keydown', closeModalEsc);
+        }        
+
+        function closeModalEsc({key}){
+          console.log(key)
+          if(key ==="Escape" && !refs.modal.classList.contains("visually-hidden")){
+            removeLocalStorage();
+            toggleModal();
+            document.removeEventListener('keydown', closeModalEsc);
+          }
+
+        }
+        
        
       }
       
