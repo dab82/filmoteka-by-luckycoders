@@ -73,7 +73,7 @@
         }        
 
         function closeModalEsc({key}){
-          console.log(key)
+          
           if(key ==="Escape" && !refs.modal.classList.contains("visually-hidden")){
             removeLocalStorage();
             toggleModal();

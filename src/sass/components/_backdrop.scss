@@ -120,6 +120,7 @@
     top: 50%;
     left: 50%;
     width: 882px;
+    height: 568px;
     padding: 42px 29px 40px;
     display: flex;
     justify-content: space-between;
@@ -127,11 +128,19 @@
   }
 
   .modal-window__img-wrapper {
-    margin-right: 30px;
+    margin-right: 0px;
   }
-  .modal-window__img-wrapper img {
-    min-width: 396px;
-    max-width: 397px;
+  .modal-window__img-wrapper{
+    width: 396px;
+    height: 478px;
+    overflow: hidden;
+  }
+  .modal-window__img-wrapper img{
+    display: block;
+    object-fit: cover;
+  }
+  .modal-window__film-desсriptoin{
+    width: 396px;
   }
   .modal-window__film-title {
     @include font(30px, 500, 35px);
