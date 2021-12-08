@@ -5,7 +5,6 @@
 .list-card__title {
   text-transform: uppercase;
   @include font(12px, 500, 16px);
-  color: var(--text-color);
 }
 .list-card__text {
   @include font(12px, 500, 16px);
@@ -27,7 +26,6 @@
 .list-card__item {
   border-radius: 0 0 10px 10px;
   margin-top: 20px;
-
 }
 .list-card__link {
   display: block;
