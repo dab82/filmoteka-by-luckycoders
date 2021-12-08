@@ -61,7 +61,7 @@ if (localStorage.getItem(STORAGE_MAIN_KEY) === null) {
       }
     
       function closeBackdrop(event) {
-        console.log(event.currentTarget)
+        
         if(event.target === refs.modal){
         refs.modal.classList.toggle('is-hidden');
         refs.body.classList.toggle('bg-scrolling-element-when-modal-open');
