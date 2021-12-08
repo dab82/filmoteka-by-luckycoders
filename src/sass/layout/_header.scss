@@ -57,11 +57,6 @@
 .header-container {
   padding-top: 46px;
   padding-bottom: 97px;
-
-  //my-library
-  // @include min-width('large') {
-  //   padding-bottom: 65px;
-  // }
 }
 //?
 .logo {
@@ -88,11 +83,6 @@
   justify-content: space-between;
   align-items: flex-end;
   margin-bottom: 43px;
-
-  //my library
-  // @include min-width('large') {
-  //   margin-bottom: 51px;
-  // }
 }
 
 .menu {
@@ -119,7 +109,6 @@
   bottom: -4px;
   width: 100%;
   height: 3px;
-  // background-color: var(--brand-orange-color);
   background-color: rgba(255, 107, 8, 0.233);
 }
 
@@ -168,6 +157,7 @@
 .input:hover,
 .input:focus {
   border-bottom: 0.5px solid var(--brand-orange-color);
+  transition: all 0.25s cubic-bezier(0.41, 0.61, 0.69, 0.51);
 }
 
 .search__btn {
@@ -191,7 +181,7 @@
   @include min-width('medium') {
     justify-content: center;
 
-    .btn__item:not(:last-child) {
+    .watched-btn {
       margin-right: 15px;
     }
   }
