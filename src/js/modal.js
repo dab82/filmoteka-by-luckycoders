@@ -11,12 +11,12 @@ if (localStorage.getItem(STORAGE_MAIN_KEY) === null) {
     link: document.querySelector('.list-card__link'),
     openModal: document.querySelector('.list-card'),
     modal: document.querySelector('[data-modal]'),
-    backdrop: document.querySelector('.backdrop'),
-  };
+    };
 
   refs.openModal.addEventListener('click', selectFilm);
 
   function selectFilm(event) {
+    
     if (event.target !== event.currentTarget) {
       let element = findAncestor(event.target, '.list-card__link');
       const elementId = element.getAttribute('data-card-id');
@@ -28,8 +28,8 @@ if (localStorage.getItem(STORAGE_MAIN_KEY) === null) {
       toggleModal(event);
 
       const closeModalBtn = document.querySelector('[data-modal-close]');
-      closeModalBtn.addEventListener('click', closeModal);
-      refs.backdrop.addEventListener('click', closeBackdrop);
+      closeModalBtn.addEventListener('click', closeModal);      
+      refs.modal.addEventListener('click', closeBackdrop);
 
       function closeModal() {
         refs.modal.classList.toggle('is-hidden');
@@ -42,7 +42,7 @@ if (localStorage.getItem(STORAGE_MAIN_KEY) === null) {
         event.preventDefault();
         refs.modal.classList.toggle('is-hidden');
         refs.body.classList.toggle('bg-scrolling-element-when-modal-open');
-        document.addEventListener('keydown', closeModalEsc);
+        document.addEventListener('keydown', closeModalEsc);        
       }
     
       function findAncestor(element, sel) {
@@ -60,12 +60,14 @@ if (localStorage.getItem(STORAGE_MAIN_KEY) === null) {
         localStorage.removeItem(STORAGE_SELECTED_KEY);
       }
     
-      function closeBackdrop() {
+      function closeBackdrop(event) {
+        console.log(event.currentTarget)
         if(event.target === refs.modal){
-          refs.backdrop.classList.toggle('is-hidden');
+        refs.modal.classList.toggle('is-hidden');
         refs.body.classList.toggle('bg-scrolling-element-when-modal-open');
         removeLocalStorage();
         document.removeEventListener('keydown', closeModalEsc);
+        refs.modal.removeEventListener('click', closeBackdrop);
         }
         
       }
@@ -73,11 +75,12 @@ if (localStorage.getItem(STORAGE_MAIN_KEY) === null) {
       function closeModalEsc({ key }) {
         if (key === 'Escape' && !refs.modal.classList.contains('is-hidden')) {
           removeLocalStorage();
+          document.removeEventListener('keydown', closeModalEsc);
           refs.modal.classList.toggle('is-hidden');
           refs.body.classList.toggle('bg-scrolling-element-when-modal-open');
-          document.removeEventListener('keydown', closeModalEsc);
-          closeModalBtn.removeEventListener('click', closeModal);
-      refs.backdrop.removeEventListener('click', closeBackdrop);
+          
+         closeModalBtn.removeEventListener('click', closeModal);
+         refs.modal.removeEventListener('click', closeBackdrop);
         }
       }
     }
