@@ -79,11 +79,12 @@ if (localStorage.getItem(STORAGE_MAIN_KEY) === null) {
       }
       function addClassIshidden(){
         refs.modal.classList.add('is-hidden');
-          refs.body.classList.add('bg-scrolling-element-when-modal-open');
+        refs.body.classList.remove('bg-scrolling-element-when-modal-open');
       }
       function removeClassIshidde(){
         refs.modal.classList.remove('is-hidden');
-          refs.body.classList.remove('bg-scrolling-element-when-modal-open');
+          
+          refs.body.classList.add('bg-scrolling-element-when-modal-open');
       }
     }
   }
