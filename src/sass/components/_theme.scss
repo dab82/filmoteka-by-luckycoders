@@ -1,23 +1,29 @@
-// .dark {
-//   background: linear-gradient(45deg, rgb(13, 13, 13), rgb(20, 13, 10));
-// }
-// .dark .list-card__title {
-//   color: white;
-// }
-
 .theme-switch {
   display: flex;
   align-items: center;
-  @include max-width('large') {
-    margin-top: 20px;
+  padding-left: 192px;
+  margin-bottom: 32px;
+  @include min-width('medium') {
+    padding-left: 530px;
+  }
+
+  @include min-width('large') {
+    padding-left: 794px;
+    margin-bottom: 10px;
   }
 }
 
 .theme-switch__icon {
   color: var(--primary-white-color);
-  height: 20px;
-  width: 20px;
+  height: 16px;
+  width: 16px;
+}
+
+.icon-sun {
   margin-right: 8px;
+}
+
+.icon-moon {
   margin-left: 8px;
 }
 
@@ -26,8 +32,8 @@
   align-items: center;
   flex-shrink: 0;
   position: relative;
-  width: 48px;
-  height: 24px;
+  width: 40px;
+  height: 20px;
   border-radius: 50em;
   padding: 3px 0;
 }
@@ -61,8 +67,8 @@
 .theme-switch__marker {
   position: relative;
   background-color: #fff;
-  width: 22px;
-  height: 22px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   z-index: 2;
   pointer-events: none;
@@ -76,7 +82,7 @@
 }
 
 .theme-switch__toggle:checked ~ .theme-switch__marker {
-  transform: translateX(22px);
+  transform: translateX(20px);
 }
 
 .theme-switch__toggle:focus + .theme-switch__track,
@@ -90,7 +96,6 @@ body.light-theme {
 
 body.dark-theme {
   background-color: rgb(51, 51, 51);
-  color: #fff;
 
   & .footer {
     background: linear-gradient(180deg, rgb(51, 51, 51), rgb(156, 156, 156) 100%);
@@ -102,5 +107,9 @@ body.dark-theme {
 
   & .theme-switch__icon {
     fill: var(--brand-orange-color);
+  }
+
+  & .list-card__title {
+    color: var(--primary-white-color);
   }
 }

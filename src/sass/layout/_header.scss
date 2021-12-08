@@ -5,7 +5,7 @@
 
     @include retina('../images/home/home_320@2x.jpg', 'small');
   }
-
+  padding-top: 48px;
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: cover;
@@ -38,7 +38,7 @@
   background-position: 50% 50%;
   background-size: cover;
   height: 230px;
-
+  padding-top: 48px;
   @include min-width('medium') {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url(../images/library/my-library_768.jpg);
@@ -54,10 +54,6 @@
   }
 }
 
-.header-container {
-  padding-top: 46px;
-  padding-bottom: 97px;
-}
 //?
 .logo {
   display: flex;
@@ -82,7 +78,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: 43px;
+  margin-bottom: 24px;
 }
 
 .menu {
