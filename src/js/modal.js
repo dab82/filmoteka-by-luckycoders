@@ -32,47 +32,56 @@ if (localStorage.getItem(STORAGE_MAIN_KEY) === null) {
       refs.backdrop.addEventListener('click', closeBackdrop);
 
       function closeModal() {
-        closeModalBtn.classList.toggle('is-hidden');
+        refs.modal.classList.toggle('is-hidden');
+        refs.body.classList.toggle('bg-scrolling-element-when-modal-open');
         removeLocalStorage();
         closeModalBtn.removeEventListener('click', closeModal);
+      }
+
+      function toggleModal(event) {
+        event.preventDefault();
+        refs.modal.classList.toggle('is-hidden');
+        refs.body.classList.toggle('bg-scrolling-element-when-modal-open');
+        document.addEventListener('keydown', closeModalEsc);
+      }
+    
+      function findAncestor(element, sel) {
+        while (
+          (element = element.parentElement) &&
+          !(element.matches || element.matchesSelector).call(element, sel)
+        );
+        return element;
+      }
+    
+      function setDataToLocalStorage(data) {
+        localStorage.setItem(STORAGE_SELECTED_KEY, JSON.stringify(data));
+      }
+      function removeLocalStorage() {
+        localStorage.removeItem(STORAGE_SELECTED_KEY);
+      }
+    
+      function closeBackdrop() {
+        if(event.target === refs.modal){
+          refs.backdrop.classList.toggle('is-hidden');
+        refs.body.classList.toggle('bg-scrolling-element-when-modal-open');
+        removeLocalStorage();
+        document.removeEventListener('keydown', closeModalEsc);
+        }
+        
+      }
+    
+      function closeModalEsc({ key }) {
+        if (key === 'Escape' && !refs.modal.classList.contains('is-hidden')) {
+          removeLocalStorage();
+          refs.modal.classList.toggle('is-hidden');
+          refs.body.classList.toggle('bg-scrolling-element-when-modal-open');
+          document.removeEventListener('keydown', closeModalEsc);
+          closeModalBtn.removeEventListener('click', closeModal);
+      refs.backdrop.removeEventListener('click', closeBackdrop);
+        }
       }
     }
   }
 
-  function toggleModal(event) {
-    event.preventDefault();
-    refs.modal.classList.toggle('is-hidden');
-    refs.body.classList.toggle('bg-scrolling-element-when-modal-open');
-    document.addEventListener('keydown', closeModalEsc);
-  }
-
-  function findAncestor(element, sel) {
-    while (
-      (element = element.parentElement) &&
-      !(element.matches || element.matchesSelector).call(element, sel)
-    );
-    return element;
-  }
-
-  function setDataToLocalStorage(data) {
-    localStorage.setItem(STORAGE_SELECTED_KEY, JSON.stringify(data));
-  }
-  function removeLocalStorage() {
-    localStorage.removeItem(STORAGE_SELECTED_KEY);
-  }
-
-  function closeBackdrop() {
-    refs.backdrop.classList.toggle('is-hidden');
-    refs.body.classList.toggle('bg-scrolling-element-when-modal-open');
-    removeLocalStorage();
-    document.removeEventListener('keydown', closeModalEsc);
-  }
-
-  function closeModalEsc({ key }) {
-    if (key === 'Escape' && !refs.modal.classList.contains('is-hidden')) {
-      removeLocalStorage();
-      toggleModal();
-      document.removeEventListener('keydown', closeModalEsc);
-    }
-  }
+  
 }
