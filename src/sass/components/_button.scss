@@ -33,3 +33,9 @@
   border-radius: 50px;
   color: var(--primary-white-color);
 }
+
+.no-active:hover,
+.no-active:focus {
+  background-color: rgba(255, 107, 1, 0.288);
+  // background-color: #ff6b0165;
+}
