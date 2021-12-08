@@ -112,4 +112,4 @@ module.exports="/filmoteka-by-luckycoders/sprite.08eccb0e.svg";
 },{"basiclightbox":"BNjD","./developers-obj":"HUq2","../images/sprite.svg":"QAGW"}],"Focm":[function(require,module,exports) {
 "use strict";require("tui-pagination/dist/tui-pagination.css"),require("material-icons/iconfont/material-icons.css"),require("animate.css"),require("basiclightbox/dist/basicLightbox.min.css"),require("./sass/main.scss"),require("./js/popular-movies-render"),require("./js/modal.js"),require("./js/header.js"),require("./js/team-modal");
 },{"tui-pagination/dist/tui-pagination.css":"UYQs","material-icons/iconfont/material-icons.css":"VyAM","animate.css":"UYQs","basiclightbox/dist/basicLightbox.min.css":"UYQs","./sass/main.scss":"clu1","./js/popular-movies-render":"xISP","./js/modal.js":"RSqK","./js/header.js":"cGsR","./js/team-modal":"SVxB"}]},{},["Focm"], null)
-//# sourceMappingURL=/filmoteka-by-luckycoders/src.13535f15.js.map
+//# sourceMappingURL=/filmoteka-by-luckycoders/src.07048ac5.js.map
