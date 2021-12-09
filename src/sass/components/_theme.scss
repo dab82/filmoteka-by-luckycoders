@@ -112,4 +112,27 @@ body.dark-theme {
   & .list-card__title {
     color: var(--primary-white-color);
   }
+
+  & .tui-pagination .tui-page-btn {
+    color: var(--primary-white-color);
+  }
+
+  & .tui-ico-ellip {
+    fill: var(--primary-white-color);
+  }
+
+  & .tui-pagination .tui-ico-prev,
+  .tui-pagination .tui-ico-next {
+    fill: var(--primary-white-color);
+  }
+
+  & .tui-pagination .hide-prev,
+  .tui-pagination .hide-next {
+    background: rgba(247, 247, 247, 0.1);
+  }
+
+  & .tui-pagination .hide-prev:hover,
+  & .tui-pagination .hide-next:hover {
+    background: var(--brand-orange-color);
+  }
 }
