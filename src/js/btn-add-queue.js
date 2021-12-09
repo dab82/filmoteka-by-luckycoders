@@ -2,6 +2,7 @@ import { refs } from './common/refs';
 import { STORAGE_WATCHED_KEY, STORAGE_QUEUE_KEY } from './common/keys';
 import ApiLocalStorege from './api-local-storage';
 refs.backdrop.addEventListener('transitionend', onAddLisenerModalBtn);
+
 export const onClickAddQueue = e => {
   ApiLocalStorege.addCard(STORAGE_QUEUE_KEY);
   addChengeActionBtn(e.target);
@@ -11,10 +12,16 @@ export const onClickRemoveQueue = e => {
   removeChengeActionBtn(e.target);
 };
 
-function onAddLisenerModalBtn() {
+function onAddLisenerModalBtn(event) {
+  // console.log(event);
+  if (!refs.backdrop.classList.contains('is-hidden')) {
+    // console.log('мы вышли');
+    return;
+  }
+
   const modalBtnRefs = {
-    addQueue: document.querySelector('.add-to-queue'),
-    addWatched: document.querySelector('.add-to-watched'),
+    addQueue: document.querySelector('[data-modal-queue]'),
+    addWatched: document.querySelector('[data-modal-watched]'),
   };
   if (!modalBtnRefs.addQueue) {
     return;
