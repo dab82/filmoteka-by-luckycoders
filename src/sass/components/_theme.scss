@@ -135,4 +135,9 @@ body.dark-theme {
   & .tui-pagination .hide-next:hover {
     background: var(--brand-orange-color);
   }
+
+  & .popular-btn,
+  & .top-rated-btn {
+    color: var(--primary-white-color);
+  }
 }
