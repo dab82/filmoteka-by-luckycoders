@@ -9,8 +9,7 @@ export const refs = {
   libLink: document.querySelector('.lib-link'),
   watchedBtn: document.querySelector('.watched-btn'),
   queueBtn: document.querySelector('.queue-btn'),
-  btnTopRated: document.querySelector('[data-action="top rated"]'),
-  btnPopular: document.querySelector('[data-action="popular"]'),
+  popularBtn: document.querySelector('.popular-btn'),
+  topRatedBtn: document.querySelector('.top-rated-btn'),
   gallery: document.querySelector('.movies'),
 };
-

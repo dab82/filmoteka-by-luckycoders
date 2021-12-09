@@ -1,10 +1,13 @@
 import { fetchPopularMovies } from './api-service-popular';
+import { fetchTopMovies } from './api-service-top';
 import { genres } from './common/genres';
 import { dataFormat } from './helpers/data-format.js';
-import { setDataToStorageForHome } from './popular-movies-render';
 import { renderListCard } from './helpers/render-list-card';
+import { setDataToStorageForHome } from './popular-movies-render';
+import { setDataToStorageForMain } from './top-rated';
 import Pagination from 'tui-pagination';
 import { refs } from './common/refs';
+import { HOME_SEARCH_TYPE, TOP_SEARCH_TYPE, INPUT_SEARCH_TYPE } from './common/search-types';
 import sprite from '../images/sprite.svg';
 
 const arrowIcon = `${sprite}#icon-arrow`;
@@ -14,13 +17,14 @@ export const paginationSettings = {
   startPage: 1,
   searchType: null,
   pagination: null,
+  totalItemsHome: null,
 };
 
 export const initPagination = ({ page, itemsPerPage, totalItems }) => {
   const options = {
     page,
-    totalItems,
     itemsPerPage,
+    totalItems,
     visiblePages: 5,
     centerAlign: true,
     usageStatistics: false,
@@ -47,11 +51,21 @@ export const initPagination = ({ page, itemsPerPage, totalItems }) => {
   paginationSettings.pagination = pagination;
 
   pagination.on('afterMove', async ({ page }) => {
-    if (paginationSettings.searchType === 'popular') {
+    if (paginationSettings.searchType === HOME_SEARCH_TYPE) {
       try {
         const response = await fetchPopularMovies(page);
         const formattedData = dataFormat(response.results, genres);
         setDataToStorageForHome(page, formattedData);
+        renderListCard(formattedData);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    if (paginationSettings.searchType === TOP_SEARCH_TYPE) {
+      try {
+        const response = await fetchTopMovies(page);
+        const formattedData = dataFormat(response.results, genres);
+        setDataToStorageForMain(formattedData);
         renderListCard(formattedData);
       } catch (error) {
         console.log(error);
