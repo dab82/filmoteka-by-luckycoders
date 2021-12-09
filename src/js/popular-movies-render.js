@@ -4,6 +4,7 @@ import { dataFormat } from './helpers/data-format.js';
 import { STORAGE_HOME_KEY, STORAGE_MAIN_KEY } from './common/keys';
 import { renderListCard } from './helpers/render-list-card';
 import { initPagination, paginationSettings } from './pagination';
+import { HOME_SEARCH_TYPE } from './common/search-types';
 
 const refs = {
   popularMovieContainer: document.querySelector('.list-card'),
@@ -13,15 +14,16 @@ const refs = {
 async function getPopularMoviesData(renderPage) {
   try {
     //получить ответ от фетча axios->
-    const { page, results, total_results: totalResults } = await fetchPopularMovies(renderPage);
+    const { page, results, total_results: totalItems } = await fetchPopularMovies(renderPage);
 
-    const startPagination = initPagination({
+    initPagination({
       page,
       itemsPerPage: results.length,
-      totalItems: totalResults,
+      totalItems,
     });
 
-    paginationSettings.searchType = 'popular';
+    paginationSettings.searchType = HOME_SEARCH_TYPE;
+    paginationSettings.totalItemsHome = totalItems;
 
     const formattedData = dataFormat(results, genres);
     renderListCard(formattedData);
