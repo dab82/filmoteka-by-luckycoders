@@ -62,11 +62,23 @@
   border: none;
 }
 
+.tui-pagination .hide-prev,
+.tui-pagination .hide-next {
+  background: var(--footer-bg-color);
+}
+
 .tui-pagination .tui-prev-is-ellip:hover,
 .tui-pagination .tui-next-is-ellip:hover,
 .tui-pagination .hide-prev:hover,
 .tui-pagination .hide-next:hover {
-  background: rgba(255, 107, 8, 0.2);
+  background: var(--brand-orange-color);
+}
+
+.tui-pagination .tui-prev-is-ellip:hover > .tui-ico-ellip,
+.tui-pagination .tui-next-is-ellip:hover > .tui-ico-ellip,
+.tui-pagination .hide-prev:hover > .tui-ico-prev,
+.tui-pagination .hide-next:hover > .tui-ico-next {
+  fill: var(--primary-white-color);
 }
 
 .tui-pagination .tui-is-selected:hover {
@@ -79,4 +91,25 @@
 
 .tui-pagination .tui-first-child.tui-is-selected {
   border-left: none;
+}
+
+.tui-pagination .tui-ico-prev,
+.tui-pagination .tui-ico-next,
+.tui-pagination .tui-ico-ellip {
+  background-image: none;
+}
+
+.tui-pagination .tui-ico-ellip {
+  width: 16px;
+  height: 16px;
+  fill: var(--text-color);
+  transition: all 250ms ease-in-out;
+}
+
+.tui-pagination .tui-ico-prev,
+.tui-pagination .tui-ico-next {
+  width: 16px;
+  height: 16px;
+  fill: var(--text-color);
+  transition: all 250ms ease-in-out;
 }

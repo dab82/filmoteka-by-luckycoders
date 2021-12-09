@@ -1,14 +1,16 @@
 <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <defs>
 
-<symbol id="icon-arrow-left" viewBox="0 0 32 32">
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M25.333 16h-18.667"></path>
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 25.334l-9.333-9.333 9.333-9.333"></path>
+<symbol id="icon-arrow-prev" viewBox="0 0 32 32">
+<path d="M11.831 8.025l-6.269 6.563c-0.375 0.363-0.563 0.856-0.563 1.4s0.188 1.031 0.563 1.4l6.269 6.588c0.744 0.781 1.956 0.781 2.7 0s0.744-2.044 0-2.825l-3.006-3.15h13.562c1.056 0 1.913-0.894 1.913-2s-0.856-2-1.913-2h-13.563l3.012-3.15c0.744-0.781 0.744-2.044 0-2.825-0.75-0.781-1.956-0.781-2.706 0z"></path>
 </symbol>
 
-<symbol id="icon-arrow-right" viewBox="0 0 32 32">
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M6.667 16h18.667"></path>
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 25.334l9.333-9.333-9.333-9.333"></path>
+<symbol id="icon-arrow-next" viewBox="0 0 32 32">
+<path d="M20.169 8.025l6.269 6.563c0.375 0.363 0.563 0.856 0.563 1.4s-0.188 1.031-0.563 1.4l-6.269 6.588c-0.744 0.781-1.956 0.781-2.7 0s-0.744-2.044 0-2.825l3.012-3.15h-13.563c-1.063 0-1.919-0.894-1.919-2s0.856-2 1.913-2h13.563l-3.012-3.15c-0.744-0.781-0.744-2.044 0-2.825 0.75-0.781 1.956-0.781 2.706 0z"></path>
+</symbol>
+
+<symbol id="icon-dots" viewBox="0 0 32 32">
+<path d="M4.803 16c0 1.395-1.131 2.526-2.526 2.526s-2.526-1.131-2.526-2.526c0-1.395 1.131-2.526 2.526-2.526v0c1.395 0.002 2.525 1.132 2.526 2.526v0zM29.224 13.474c-1.395 0-2.526 1.131-2.526 2.526s1.131 2.526 2.526 2.526c1.395 0 2.526-1.131 2.526-2.526v0c-0.002-1.395-1.132-2.525-2.526-2.526h-0zM15.75 13.474c-1.395 0-2.526 1.131-2.526 2.526s1.131 2.526 2.526 2.526c1.395 0 2.526-1.131 2.526-2.526v0c-0.002-1.395-1.132-2.525-2.526-2.526h-0z"></path>
 </symbol>
 
 <symbol id="icon-close" viewBox="0 0 32 32">
