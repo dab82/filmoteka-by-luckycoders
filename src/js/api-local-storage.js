@@ -25,7 +25,6 @@ function delCard(libraryKey) {
   if (!library) {
     library = [];
   }
-  console.log('library', library);
   library = library.filter(film => film.id != id);
 
   returnData(libraryKey, library);
@@ -50,7 +49,6 @@ function returnData(libraryKey, library) {
 function searchId(key) {
   let data = null;
   data = validData(key);
-  console.log('data[0]', data[0]['id']);
   return data[0]['id'];
 }
 

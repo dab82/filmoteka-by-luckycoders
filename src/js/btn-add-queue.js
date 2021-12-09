@@ -24,5 +24,8 @@ function onAddLisenerModalBtn() {
     addQueue: document.querySelector('.add-to-queue'),
     addWatched: document.querySelector('.add-to-watched'),
   };
+  if (!modalBtnRefs.addQueue) {
+    return;
+  }
   modalBtnRefs.addQueue.addEventListener('click', onClickAddQueue);
 }
