@@ -17,7 +17,7 @@ function addCard(libraryKey) {
 function delCard(libraryKey) {
   let library = null;
   let id = null;
-  id = searchId(STORAGE_SELECTED_KEY);
+  id = searchDataId(STORAGE_SELECTED_KEY);
   if (!id) {
     return;
   }
@@ -46,10 +46,23 @@ function validData(key) {
 function returnData(libraryKey, library) {
   localStorage.setItem(libraryKey, JSON.stringify(library));
 }
-function searchId(key) {
+function searchDataId(key) {
   let data = null;
   data = validData(key);
   return data[0]['id'];
 }
+function searchFilm(key) {
+  let id = null;
+  let data = null;
+  id = searchDataId(STORAGE_SELECTED_KEY);
+  if (!id) {
+    return;
+  }
+  data = validData(key);
+  if (!data) {
+    return;
+  }
+  return data.find(film => film.id === id);
+}
 
-export default { addCard, delCard };
+export default { addCard, delCard, searchFilm };

@@ -2,21 +2,13 @@ import { refs } from './common/refs';
 import { STORAGE_WATCHED_KEY, STORAGE_QUEUE_KEY } from './common/keys';
 import ApiLocalStorege from './api-local-storage';
 refs.backdrop.addEventListener('transitionend', onAddLisenerModalBtn);
-const onClickAddQueue = e => {
+export const onClickAddQueue = e => {
   ApiLocalStorege.addCard(STORAGE_QUEUE_KEY);
-  e.target.removeEventListener('click', onClickAddQueue);
-  e.target.classList.remove('add-to-queue');
-  e.target.textContent = 'remove from queue';
-  e.target.classList.add("remove-from-queue'");
-  e.target.addEventListener('click', onClickRemoveQueue);
+  addChengeActionBtn(e.target);
 };
-const onClickRemoveQueue = e => {
+export const onClickRemoveQueue = e => {
   ApiLocalStorege.delCard(STORAGE_QUEUE_KEY);
-  e.target.removeEventListener('click', onClickRemoveQueue);
-  e.target.classList.remove('remove-from-queue');
-  e.target.textContent = 'add from queue';
-  e.target.classList.add('add-to-queue');
-  e.target.addEventListener('click', onClickAddQueue);
+  removeChengeActionBtn(e.target);
 };
 
 function onAddLisenerModalBtn() {
@@ -27,5 +19,26 @@ function onAddLisenerModalBtn() {
   if (!modalBtnRefs.addQueue) {
     return;
   }
+  // if (ApiLocalStorege.searchFilm(STORAGE_QUEUE_KEY)) {
+  //   removeChengeActionBtn(modalBtnRefs.addQueue);
+  // }
   modalBtnRefs.addQueue.addEventListener('click', onClickAddQueue);
 }
+function removeChengeActionBtn(btn) {
+  btn.removeEventListener('click', onClickRemoveQueue);
+  btn.classList.remove('remove-from-queue');
+  btn.textContent = 'add from queue';
+  btn.classList.add('add-to-queue');
+  btn.addEventListener('click', onClickAddQueue);
+}
+function addChengeActionBtn(btn) {
+  btn.removeEventListener('click', onClickAddQueue);
+  btn.classList.remove('add-to-queue');
+  btn.textContent = 'remove from queue';
+  btn.classList.add("remove-from-queue'");
+  btn.addEventListener('click', onClickRemoveQueue);
+}
+// function onCheckWatched(key) {
+//   searchFilm(STORAGE_WATCHED_KEY);
+// }
+export default { onClickAddQueue, onClickRemoveQueue };
