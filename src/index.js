@@ -10,6 +10,9 @@ import './js/popular-movies-render';
 import './js/modal.js';
 import './js/header.js';
 import './js/team-modal';
+import './js/btn-add-queue';
+
+// import './js/btt'; // back to top
 import './js/theme';
 import './js/top-rated';
 // import './js/btt'; // back to top

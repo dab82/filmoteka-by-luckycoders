@@ -1,11 +1,15 @@
 import { STORAGE_SELECTED_KEY } from './common/keys';
 function addCard(libraryKey) {
-  const dataFilm = validCurrentData();
+  let library = null;
+  const dataFilm = validData(STORAGE_SELECTED_KEY);
   if (!dataFilm) {
     return;
   }
-  parseData();
-  library.push(dataFilm);
+  library = validData(libraryKey);
+  if (!library) {
+    library = [];
+  }
+  library.push(...dataFilm);
   returnData(libraryKey, library);
   return true;
 }
@@ -13,37 +17,41 @@ function addCard(libraryKey) {
 function delCard(libraryKey) {
   let library = null;
   let id = null;
-  const dataFilm = validCurrentData();
-  if (!dataFilm) {
+  id = searchId(STORAGE_SELECTED_KEY);
+  if (!id) {
     return;
   }
-  id = dataFilm.id;
-  library = parseData(libraryKey);
+  library = validData(libraryKey);
+  if (!library) {
+    library = [];
+  }
+  console.log('library', library);
   library = library.filter(film => film.id != id);
+
   returnData(libraryKey, library);
 }
-function validCurrentData() {
-  let dataFilm = null;
-  dataFilm = localStorage.getItem(STORAGE_SELECTED_KEY);
-  if (!dataFilm) {
+function validData(key) {
+  let data = null;
+  data = localStorage.getItem(key);
+  if (!data) {
     return;
   }
   try {
-    dataFilm = JSON.parse(dataFilm);
+    data = JSON.parse(data);
   } catch {
     return;
   }
-  return dataFilm;
-}
-function parseData(libraryKey) {
-  let library = null;
-  library = localStorage.getItem(libraryKey);
-  library ? JSON.parse(library) : (library = []);
-  return library;
+  return data;
 }
 
 function returnData(libraryKey, library) {
   localStorage.setItem(libraryKey, JSON.stringify(library));
+}
+function searchId(key) {
+  let data = null;
+  data = validData(key);
+  console.log('data[0]', data[0]['id']);
+  return data[0]['id'];
 }
 
 export default { addCard, delCard };
