@@ -124,4 +124,4 @@ const t=document.querySelector("#theme-switch-toggle"),e={LIGHT:"light-theme",DA
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("tui-pagination/dist/tui-pagination.css"),require("material-icons/iconfont/material-icons.css"),require("animate.css"),require("basiclightbox/dist/basicLightbox.min.css"),require("./sass/main.scss"),require("./js/popular-movies-render"),require("./js/modal.js"),require("./js/header.js"),require("./js/team-modal"),require("./js/btn-add-queue"),require("./js/theme"),require("./js/top-rated");
 },{"tui-pagination/dist/tui-pagination.css":"UYQs","material-icons/iconfont/material-icons.css":"VyAM","animate.css":"UYQs","basiclightbox/dist/basicLightbox.min.css":"UYQs","./sass/main.scss":"clu1","./js/popular-movies-render":"xISP","./js/modal.js":"RSqK","./js/header.js":"cGsR","./js/team-modal":"SVxB","./js/btn-add-queue":"aCh9","./js/theme":"qwQt","./js/top-rated":"iDDC"}]},{},["Focm"], null)
-//# sourceMappingURL=/filmoteka-by-luckycoders/src.46e5c243.js.map
+//# sourceMappingURL=/filmoteka-by-luckycoders/src.dd8e35ad.js.map
