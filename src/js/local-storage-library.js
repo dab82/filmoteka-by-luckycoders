@@ -55,10 +55,12 @@ function searchFilm(key) {
   let id = null;
   let data = null;
   id = searchDataId(STORAGE_SELECTED_KEY);
+  console.log('id', id);
   if (!id) {
     return;
   }
   data = validData(key);
+  console.log('data', data);
   if (!data) {
     return;
   }

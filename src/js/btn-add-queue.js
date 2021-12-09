@@ -1,36 +1,11 @@
-import { refs } from './common/refs';
-import { STORAGE_WATCHED_KEY, STORAGE_QUEUE_KEY } from './common/keys';
-import ApiLocalStorege from './api-local-storage';
-refs.backdrop.addEventListener('transitionend', onAddLisenerModalBtn);
-
-export const onClickAddQueue = e => {
-  ApiLocalStorege.addCard(STORAGE_QUEUE_KEY);
-  addChengeActionBtn(e.target);
+import ApiLocalStorege from './local-storage-library';
+export const onClickAddQueue = key => {
+  ApiLocalStorege.addCard(key);
 };
 export const onClickRemoveQueue = e => {
   ApiLocalStorege.delCard(STORAGE_QUEUE_KEY);
   removeChengeActionBtn(e.target);
 };
-
-function onAddLisenerModalBtn(event) {
-  // console.log(event);
-  if (!refs.backdrop.classList.contains('is-hidden')) {
-    // console.log('мы вышли');
-    return;
-  }
-
-  const modalBtnRefs = {
-    addQueue: document.querySelector('[data-modal-queue]'),
-    addWatched: document.querySelector('[data-modal-watched]'),
-  };
-  if (!modalBtnRefs.addQueue) {
-    return;
-  }
-  // if (ApiLocalStorege.searchFilm(STORAGE_QUEUE_KEY)) {
-  //   removeChengeActionBtn(modalBtnRefs.addQueue);
-  // }
-  modalBtnRefs.addQueue.addEventListener('click', onClickAddQueue);
-}
 function removeChengeActionBtn(btn) {
   btn.removeEventListener('click', onClickRemoveQueue);
   btn.classList.remove('remove-from-queue');
@@ -45,7 +20,3 @@ function addChengeActionBtn(btn) {
   btn.classList.add("remove-from-queue'");
   btn.addEventListener('click', onClickRemoveQueue);
 }
-// function onCheckWatched(key) {
-//   searchFilm(STORAGE_WATCHED_KEY);
-// }
-export default { onClickAddQueue, onClickRemoveQueue };
