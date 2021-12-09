@@ -39,3 +39,32 @@
   background-color: rgba(255, 107, 1, 0.288);
   // background-color: #ff6b0165;
 }
+
+.popular-btn,
+.top-rated-btn {
+  color: black;
+  text-align: center;
+  font-size: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 10px;
+  border: 1px solid rgba(255, 107, 1, 0.6);
+  border-bottom: 3px solid rgba(255, 107, 1, 0.6);
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-box-shadow: 0 2px 8px rgba(255, 107, 1, 0.5), inset 0 1px rgba(255, 255, 255, 0.3),
+    inset 0 10px rgba(255, 255, 255, 0.2), inset 0 10px 20px rgba(255, 255, 255, 0.25),
+    inset 0 -15px 30px rgba(255, 107, 1, 0.3);
+
+  &:focus,
+  &:hover {
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    -moz-opacity: 0.7;
+    -khtml-opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+.black.popular-btn {
+}

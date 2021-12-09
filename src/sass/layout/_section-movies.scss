@@ -101,3 +101,19 @@
   }
   // background-color: #fff;
 }
+
+// ------ BTN SEARCH--------------
+
+.search-btn-item {
+  margin-left: 8px;
+  margin-top: 15px;
+}
+
+.search-btn-list {
+  margin-bottom: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: -8px;
+  margin-top: -15px;
+}

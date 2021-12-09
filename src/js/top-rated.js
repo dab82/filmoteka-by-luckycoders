@@ -10,6 +10,7 @@ import { refs } from './common/refs';
 refs.topRatedBtn.addEventListener('click', onClickTopRatedBtn);
 refs.popularBtn.addEventListener('click', onClickPopularBtn);
 
+
 async function onClickTopRatedBtn() {
   try {
     const { results, total_results: totalItems } = await fetchTopMovies(
