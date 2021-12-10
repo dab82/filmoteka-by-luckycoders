@@ -1,5 +1,5 @@
 import { genres } from './common/genres';
-import { setDataToStorageForHome } from './popular-movies-render';
+import { STORAGE_MAIN_KEY } from './common/keys';
 import { dataFormat } from './helpers/data-format.js';
 import { renderListCard } from './helpers/render-list-card';
 import { fetchSearchMovies } from './api-service-search';
@@ -18,7 +18,7 @@ function onInput() {
     fetchSearchMovies(searchQuery, page).then(res => {
       const formattedData = dataFormat(res.results, genres);
       renderListCard(formattedData);
-      setDataToStorageForHome(page, formattedData);
+      localStorage.setItem(STORAGE_MAIN_KEY, formattedData)
     });
   }
 }
