@@ -1,8 +1,13 @@
 import { renderModal } from './helpers/render-modal';
 import { STORAGE_MAIN_KEY } from './common/keys';
 import { STORAGE_SELECTED_KEY } from './common/keys';
+import { STORAGE_QUEUE_KEY } from './common/keys';
+import { STORAGE_WATCHED_KEY } from './common/keys';
+import { removeMod } from './modal-btn-mods';
+import ApiLocalStorege from './local-storage-library';
 
 let data = [];
+
 
 if (localStorage.getItem(STORAGE_MAIN_KEY) === null) {
 } else {
@@ -13,6 +18,7 @@ if (localStorage.getItem(STORAGE_MAIN_KEY) === null) {
     modal: document.querySelector('[data-modal]'),
     };
 
+  
   refs.openModal.addEventListener('click', selectFilm);
 
   function selectFilm(event) {
@@ -20,12 +26,38 @@ if (localStorage.getItem(STORAGE_MAIN_KEY) === null) {
     if (event.target !== event.currentTarget) {
       let element = findAncestor(event.target, '.list-card__link');
       const elementId = element.getAttribute('data-card-id');
-      const dataLS = JSON.parse(localStorage.getItem(STORAGE_MAIN_KEY));
+
+      let dataLS = null;
+      
+      try {
+        dataLS = JSON.parse(localStorage.getItem(STORAGE_MAIN_KEY));
+      } catch {
+        return;
+      }      
+          
       data = dataLS.filter(dat => dat.id == elementId);
 
-      setDataToLocalStorage(data);
+      // if(filmToQueue){
+      //   renderModal(...filmToQueue);
+      //   toggleModal(event);
+      // }else{
+        setDataToLocalStorage(data);
       renderModal(...data);
+      const btnRefs = {
+        addQueue: document.querySelector('[data-modal-queue]'),
+        addWatched: document.querySelector('[data-modal-watched]'),
+      };
+      const filmToQueue = ApiLocalStorege.searchFilm(STORAGE_QUEUE_KEY);
+       const filmToWatched = ApiLocalStorege.searchFilm(STORAGE_WATCHED_KEY);
+        if (filmToQueue) { removeMod(btnRefs.addQueue, 'queue'); }
+        if (filmToWatched) { removeMod(btnRefs.addWatched, 'watched'); }
       toggleModal(event);
+      // }
+
+
+      // setDataToLocalStorage(data);
+      // renderModal(...data);
+      // toggleModal(event);
 
       const closeModalBtn = document.querySelector('[data-modal-close]');
       closeModalBtn.addEventListener('click', closeModal);      
