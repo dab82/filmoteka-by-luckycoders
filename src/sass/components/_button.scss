@@ -16,8 +16,26 @@
   text-transform: uppercase;
   text-align: center;
 
+  @include min-width('medium') {
+    min-width: 125px;
+  }
   @include min-width('large') {
     min-width: 136px;
+  }
+}
+
+.button.remove-from-watched,
+.button.remove-from-queue{
+  width: 112px;
+  display: flex;
+  align-items: center;
+  @include min-width('medium') {
+    min-width: 125px;
+  }
+  @include min-width('large') {
+    min-width: 136px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 
