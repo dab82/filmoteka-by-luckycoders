@@ -29,12 +29,12 @@
 .modal-window {
   font-family: Roboto;
   position: absolute;
-  top: 70%;
+  top: 10%;
   left: 50%;
   z-index: 101;
   width: 280px;
   padding: 48px 20px 41px;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%);
   background-color: #ffffff;
   overflow: auto;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -111,6 +111,10 @@
       margin-right: 15px;
     }
   }
+  .description {
+    height: 127px;
+    overflow: auto;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -127,6 +131,10 @@
 
   .modal-window__film-title {
     @include font(30px, 500, 35px);
+  }
+
+  .description {
+    height: auto;
   }
 
   // .button-wrapper {
