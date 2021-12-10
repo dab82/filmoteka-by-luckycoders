@@ -3,6 +3,7 @@ import { STORAGE_HOME_KEY, STORAGE_MAIN_KEY } from './common/keys';
 import { renderListCard } from './helpers/render-list-card';
 
 refs.onLogo.addEventListener('click', renderCards);
+refs.homeLink.addEventListener('click', renderCards);
 
 function renderCards(e) {
   e.preventDefault();
