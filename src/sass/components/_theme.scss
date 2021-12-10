@@ -96,6 +96,7 @@ body.light-theme {
 
 body.dark-theme {
   background-color: rgb(51, 51, 51);
+  background-image: url(../images/nebo.jpg);
 
   & .footer {
     background: linear-gradient(180deg, rgb(51, 51, 51), rgb(156, 156, 156) 100%);
