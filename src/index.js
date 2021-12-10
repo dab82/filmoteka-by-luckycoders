@@ -15,4 +15,4 @@ import './js/modal.js';
 import './js/main-modal-btn';
 import './js/theme';
 import './js/team-modal';
-// import './js/btt'; // back to top
+import './js/btt'; // back to top
