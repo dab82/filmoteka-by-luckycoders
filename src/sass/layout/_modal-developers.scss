@@ -2,6 +2,38 @@
   overflow: scroll;
 }
 
+.basicLightbox__placeholder {
+  position: absolute;
+  top: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  // margin: -20px;
+  text-align: center;
+  text-decoration: none;
+  width: 280px;
+  background-color: white;
+  border-radius: 15px;
+
+  @media screen and (min-width: 420px) and (max-width: 767px) {
+    // margin-top: 70px;
+    top: 5%;
+    width: 360px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 500px;
+    top: 5%;
+  }
+
+  @media screen and (min-width: 1024px) {
+    // margin: -30px;
+
+    width: 620px;
+  }
+}
+
 .team-title {
   font-size: 20px;
   font-weight: bold;
@@ -14,7 +46,7 @@
 
   &:hover,
   &:focus {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
 
   &::after {
@@ -25,38 +57,6 @@
     background-color: var(--brand-orange-color);
     margin: 0 auto;
     margin-top: 5px;
-  }
-}
-.team-modal {
-  position: relative;
-  top: 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  margin: -20px;
-  text-align: center;
-  text-decoration: none;
-
-  @media screen and (max-width: (768px - 1)) {
-    margin-top: 70px;
-  }
-
-  width: 240px;
-
-  background-color: white;
-  border-radius: 15px;
-
-  @media screen and (min-width: 768px) {
-    width: 600px;
-
-    border-radius: 15px;
-  }
-
-  @media screen and (min-width: 1024px) {
-    margin: -30px;
-
-    width: 800px;
   }
 }
 .team-wrapper {
@@ -72,18 +72,18 @@
   flex-direction: column;
   align-items: center;
 
-  margin: 20px;
+  margin: 10px;
 
   width: calc((100% - 80px) / 2);
 
   @media screen and (min-width: 768px) {
-    width: calc((100% - 160px) / 3);
+    width: calc((100% - 120px) / 3);
   }
 
   @media screen and (min-width: 1024px) {
-    margin: 30px;
+    margin: 20px;
 
-    width: calc((100% - 240px) / 3);
+    width: calc((100% - 160px) / 3);
   }
 }
 
@@ -115,7 +115,7 @@
 .team-git {
   position: absolute;
   cursor: pointer;
-  right: -10px;
+  right: -10%;
 
   // top: 65px;
 
@@ -128,7 +128,6 @@
   // }
 
   transform: scale(1);
-  //   @include transition(transform);
   transition: transform;
 
   &:hover,
