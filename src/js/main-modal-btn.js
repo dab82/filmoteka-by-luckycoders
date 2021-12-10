@@ -15,14 +15,14 @@ function onAddLisenerModalBtn() {
     btnRefs.addWatched.removeEventListener('click', onClickBtnWatched);
     return;
   }
-  const filmToQueue = ApiLocalStorege.searchFilm(STORAGE_QUEUE_KEY);
-  const filmToWatched = ApiLocalStorege.searchFilm(STORAGE_WATCHED_KEY);
-  if (filmToQueue) {
-    removeMod(btnRefs.addQueue, 'queue');
-  }
-  if (filmToWatched) {
-    removeMod(btnRefs.addWatched, 'watched');
-  }
+  // const filmToQueue = ApiLocalStorege.searchFilm(STORAGE_QUEUE_KEY);
+  // const filmToWatched = ApiLocalStorege.searchFilm(STORAGE_WATCHED_KEY);
+  // if (filmToQueue) {
+  //   removeMod(btnRefs.addQueue, 'queue');
+  // }
+  // if (filmToWatched) {
+  //   removeMod(btnRefs.addWatched, 'watched');
+  // }
   btnRefs.addQueue.addEventListener('click', onClickBtnQueue);
   btnRefs.addWatched.addEventListener('click', onClickBtnWatched);
 }
