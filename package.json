@@ -29,7 +29,9 @@
     "animate.css": "^4.1.1",
     "axios": "^0.24.0",
     "basiclightbox": "^5.0.4",
+    "lodash.debounce": "^4.0.8",
     "material-icons": "^1.10.4",
+    "notiflix": "^3.2.2",
     "tui-pagination": "^3.4.1"
   }
 }

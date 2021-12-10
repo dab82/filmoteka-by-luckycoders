@@ -12,6 +12,7 @@ import './js/header.js';
 import './js/team-modal';
 import './js/main-modal-btn';
 import './js/onhome-click-render';
+import './js/search';
 
 // import './js/btt'; // back to top
 import './js/theme';
