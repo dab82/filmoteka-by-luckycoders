@@ -103,6 +103,13 @@
     justify-content: space-between;
     transform: translate(-50%, -50%);
   }
+  .button-wrapper {
+        
+    justify-content: start;
+    & > :first-child {
+      margin-right: 15px;
+    }
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -122,11 +129,7 @@
   }
 
   .button-wrapper {
-    display: flex;
-    justify-content: start;
-    & > :first-child {
-      margin-right: 15px;
-    }
+    
   }
 }
 
