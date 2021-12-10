@@ -1,5 +1,6 @@
 import { fetchPopularMovies } from './api-service-popular';
 import { fetchTopMovies } from './api-service-top';
+import { fetchSearchMovies } from './api-service-search';
 import { genres } from './common/genres';
 import { dataFormat } from './helpers/data-format.js';
 import { renderListCard } from './helpers/render-list-card';
@@ -60,13 +61,22 @@ export const initPagination = ({ page, itemsPerPage, totalItems }) => {
       } catch (error) {
         console.log(error);
       }
-    }
-    if (paginationSettings.searchType === TOP_SEARCH_TYPE) {
+    } else if (paginationSettings.searchType === TOP_SEARCH_TYPE) {
       try {
         const response = await fetchTopMovies(page);
         const formattedData = dataFormat(response.results, genres);
         setDataToStorageForMain(formattedData);
         renderListCard(formattedData);
+      } catch (error) {
+        console.log(error);
+      }
+    } else if (paginationSettings.searchType === INPUT_SEARCH_TYPE) {
+      try {
+        refs.searchForm.value = '';
+        const response = await fetchSearchMovies(paginationSettings.pagination.searchQuery, page);
+        const formattedData = dataFormat(response.results, genres);
+        renderListCard(formattedData);
+        setDataToStorageForMain(formattedData);
       } catch (error) {
         console.log(error);
       }

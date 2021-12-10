@@ -113,3 +113,7 @@
   fill: var(--text-color);
   transition: all 250ms ease-in-out;
 }
+
+.tui-pagination .tui-last-child.tui-is-selected {
+  border-right: 1px solid var(--brand-orange-color);
+}
