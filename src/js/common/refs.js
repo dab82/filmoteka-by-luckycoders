@@ -12,4 +12,5 @@ export const refs = {
   popularBtn: document.querySelector('.popular-btn'),
   topRatedBtn: document.querySelector('.top-rated-btn'),
   gallery: document.querySelector('.movies'),
+  onLogo: document.querySelector('.logo'),
 };
