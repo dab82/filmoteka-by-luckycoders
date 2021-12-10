@@ -5,12 +5,13 @@ import ApiLocalStorege from './local-storage-library';
 
 refs.backdrop.addEventListener('transitionend', onAddLisenerModalBtn);
 
-function onAddLisenerModalBtn() {
+function onAddLisenerModalBtn(event) {
+  console.log(event);
   const btnRefs = {
     addQueue: document.querySelector('[data-modal-queue]'),
     addWatched: document.querySelector('[data-modal-watched]'),
   };
-  if (refs.backdrop.classList.contains('is-hidden')) {
+  if (!refs.backdrop.classList.contains('is-shown')) {
     btnRefs.addQueue.removeEventListener('click', onClickBtnQueue);
     btnRefs.addWatched.removeEventListener('click', onClickBtnWatched);
     return;

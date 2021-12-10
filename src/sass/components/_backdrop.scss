@@ -14,15 +14,16 @@
   z-index: 100;
   background-color: rgba(0, 0, 0, 0.8);
   overflow: auto;
-  opacity: 1;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.is-hidden {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.is-shown {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .modal-window {
@@ -104,7 +105,6 @@
     transform: translate(-50%, -50%);
   }
   .button-wrapper {
-        
     justify-content: start;
     & > :first-child {
       margin-right: 15px;
@@ -129,7 +129,6 @@
   }
 
   .button-wrapper {
-    
   }
 }
 
