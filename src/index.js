@@ -11,6 +11,7 @@ import './js/modal.js';
 import './js/header.js';
 import './js/team-modal';
 import './js/main-modal-btn';
+import './js/render-from-local-stogare';
 
 // import './js/btt'; // back to top
 import './js/theme';
