@@ -50,7 +50,11 @@
       </tr>
     </table>
     <p class='about'>About</p>
-    <p class='description'>{{overview}}</p>
+    {{#if overview}}
+      <p class='description'>{{overview}}</p>
+    {{else}}
+      <p class='description'>No description availiable</p>
+    {{/if}}
     <div class='button-wrapper'>
       <button class='button button-active add-to-watched' data-modal-watched>add to Watched</button>
       <button class='button add-to-queue' data-modal-queue>add to queue</button>
