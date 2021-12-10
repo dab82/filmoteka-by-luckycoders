@@ -2,7 +2,7 @@ import { refs } from './common/refs';
 import { STORAGE_HOME_KEY, STORAGE_MAIN_KEY } from './common/keys';
 import { renderListCard } from './helpers/render-list-card';
 import { paginationSettings } from './pagination';
-import { HOME_SEARCH_TYPE, TOP_SEARCH_TYPE } from './common/search-types';
+import { HOME_SEARCH_TYPE } from './common/search-types';
 
 refs.onLogo.addEventListener('click', renderCards);
 refs.homeLink.addEventListener('click', renderCards);
