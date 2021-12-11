@@ -1,6 +1,6 @@
 import * as basicLightbox from 'basiclightbox';
 
-import { developers } from './developers-obj';
+import { developers } from './common/developers-obj';
 
 import spriteUrl from '../images/sprite.svg';
 

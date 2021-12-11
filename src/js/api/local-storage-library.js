@@ -1,4 +1,4 @@
-import { STORAGE_SELECTED_KEY } from './common/keys';
+import { STORAGE_SELECTED_KEY } from '../common/keys';
 function addCard(libraryKey) {
   let library = null;
   const dataFilm = validData(STORAGE_SELECTED_KEY);
