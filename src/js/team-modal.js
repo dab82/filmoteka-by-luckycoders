@@ -36,16 +36,17 @@ function openModal(e) {
   modal.show();
   const body = document.querySelector('body');
   body.classList.add('bg-scrolling-element-when-modal-open');
-
   const closeModalBtn = document.querySelector('[data-modal-close]');
   closeModalBtn.addEventListener('click', closeModal);
+  window.addEventListener('keydown', closeModalHandler);
+  const backdrop = document.querySelector('.basicLightbox');
+  backdrop.addEventListener('click', closeBackdrop);
 
   function closeModal(e) {
     modal.close();
     body.classList.remove('bg-scrolling-element-when-modal-open');
     closeModalBtn.removeEventListener('click', closeModal);
   }
-  window.addEventListener('keydown', closeModalHandler);
 
   function closeModalHandler(e) {
     if (e.code === 'Escape') {
@@ -53,5 +54,10 @@ function openModal(e) {
       body.classList.remove('bg-scrolling-element-when-modal-open');
       window.removeEventListener('keydown', closeModalHandler);
     }
+  }
+
+  function closeBackdrop(e) {
+    modal.close();
+    body.classList.remove('bg-scrolling-element-when-modal-open');
   }
 }
