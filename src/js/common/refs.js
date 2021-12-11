@@ -14,5 +14,4 @@ export const refs = {
   gallery: document.querySelector('.movies'),
   onLogo: document.querySelector('.logo'),
   searchForm: document.querySelector('.search-form input'),
-  // searchBtn: document.querySelector('search-btn-list'),
 };

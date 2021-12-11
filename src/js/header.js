@@ -83,6 +83,7 @@ function watchedPage() {
 
     if (watched !== null) {
     const parsedDataWatched = JSON.parse(watched);
-    renderListCard(parsedDataWatched);
+        renderListCard(parsedDataWatched);
+  localStorage.setItem(STORAGE_MAIN_KEY, JSON.stringify(parsedDataWatched));
     }
   }
