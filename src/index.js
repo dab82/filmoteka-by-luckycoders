@@ -13,6 +13,7 @@ import './js/header.js';
 import './js/top-rated';
 import './js/modal.js';
 import './js/main-modal-btn';
+import './js/watched-queue';
 import './js/theme';
 import './js/team-modal';
 import './js/btt'; // back to top

@@ -25,7 +25,7 @@
 }
 
 .button.remove-from-watched,
-.button.remove-from-queue{
+.button.remove-from-queue {
   width: 112px;
   display: flex;
   align-items: center;
@@ -55,6 +55,7 @@
 .no-active:hover,
 .no-active:focus {
   background-color: rgba(255, 107, 1, 0.288);
+
   // background-color: #ff6b0165;
 }
 
@@ -84,5 +85,17 @@
   }
 }
 
-.black.popular-btn {
+.btn-lib {
+  min-width: 130px;
+  color: var(--primary-white-color);
+
+  @include min-width('medium') {
+    min-width: 136px;
+  }
 }
+
+.btn-lib.no-active {
+  border: 1px solid var(--primary-white-color);
+}
+// .black.popular-btn {
+// }
