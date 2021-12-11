@@ -18,8 +18,10 @@ const markupTeamCard = developers
   })
   .join('');
 
-const markupModal = `<div class="team-modal">
-<p class="team-title">LUCKY&#127808;CODERS</p>
+const markupModal = `<a href="https://github.com/dab82/filmoteka-by-luckycoders" target"_blank" class="team-title">LUCKY&#127808;CODERS</a>
+ <button type='button' class='modal-window__close-btn' data-modal-close>
+    <span class='material-icons'>close</span>
+  </button>
 <ul class="team-wrapper">
 ${markupTeamCard}
 </ul>
@@ -32,12 +34,23 @@ const modal = basicLightbox.create(markupModal);
 
 function openModal(e) {
   modal.show();
+  const body = document.querySelector('body');
+  body.classList.add('bg-scrolling-element-when-modal-open');
 
+  const closeModalBtn = document.querySelector('[data-modal-close]');
+  closeModalBtn.addEventListener('click', closeModal);
+
+  function closeModal(e) {
+    modal.close();
+    body.classList.remove('bg-scrolling-element-when-modal-open');
+    closeModalBtn.removeEventListener('click', closeModal);
+  }
   window.addEventListener('keydown', closeModalHandler);
 
   function closeModalHandler(e) {
     if (e.code === 'Escape') {
       modal.close();
+      body.classList.remove('bg-scrolling-element-when-modal-open');
       window.removeEventListener('keydown', closeModalHandler);
     }
   }
