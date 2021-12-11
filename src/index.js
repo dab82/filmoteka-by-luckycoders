@@ -7,15 +7,13 @@ import './sass/main.scss';
 
 //IMPORT JS
 import './js/popular-movies-render';
-import './js/modal.js';
-import './js/header.js';
-import './js/team-modal';
-import './js/main-modal-btn';
+import './js/search-movies-render';
 import './js/onhome-click-render';
-import './js/search';
-import './js/watched-queue';
-
-// import './js/btt'; // back to top
-import './js/theme';
+import './js/header.js';
 import './js/top-rated';
-// import './js/btt'; // back to top
+import './js/modal.js';
+import './js/main-modal-btn';
+import './js/watched-queue';
+import './js/theme';
+import './js/team-modal';
+import './js/btt'; // back to top

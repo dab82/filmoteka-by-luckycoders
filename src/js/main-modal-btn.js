@@ -6,7 +6,7 @@ import ApiLocalStorege from './local-storage-library';
 refs.backdrop.addEventListener('transitionend', onAddLisenerModalBtn);
 
 function onAddLisenerModalBtn(event) {
-  console.log(event);
+  // console.log(event);
   const btnRefs = {
     addQueue: document.querySelector('[data-modal-queue]'),
     addWatched: document.querySelector('[data-modal-watched]'),
