@@ -14,10 +14,10 @@ function onAddLisenerModalBtn(event) {
     addQueue: document.querySelector('[data-modal-queue]'),
     addWatched: document.querySelector('[data-modal-watched]'),
   };
-  if (!refs.backdrop.classList.contains('is-shown')) {
-    btnRefs.addQueue.removeEventListener('click', onClickBtnQueue);
-    btnRefs.addWatched.removeEventListener('click', onClickBtnWatched);
-    return;
+  if (refs.backdrop.classList.contains('is-shown')) {
+    btnRefs.addQueue.addEventListener('click', onClickBtnQueue);
+    btnRefs.addWatched.addEventListener('click', onClickBtnWatched);
+    // return;
   }
   // const filmToQueue = ApiLocalStorege.searchFilm(STORAGE_QUEUE_KEY);
   // const filmToWatched = ApiLocalStorege.searchFilm(STORAGE_WATCHED_KEY);
@@ -27,8 +27,8 @@ function onAddLisenerModalBtn(event) {
   // if (filmToWatched) {
   //   removeMod(btnRefs.addWatched, 'watched');
   // }
-  btnRefs.addQueue.addEventListener('click', onClickBtnQueue);
-  btnRefs.addWatched.addEventListener('click', onClickBtnWatched);
+  // btnRefs.addQueue.removeEventListener('click', onClickBtnQueue);
+  // btnRefs.addWatched.removeEventListener('click', onClickBtnWatched);
 }
 
 function onClickBtnQueue(e) {
