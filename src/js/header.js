@@ -13,6 +13,7 @@ refs.watchedBtn.addEventListener('click', activeBtnWatched);
 refs.queueBtn.addEventListener('click', activeBtnQueue);
 
 function clickLib() {
+  refs.searchForm.value = '';
   addClassLibrary();
   activeBorderLib();
   activeBtnWatched();

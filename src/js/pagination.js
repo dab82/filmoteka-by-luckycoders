@@ -9,6 +9,7 @@ import { setDataToStorageForMain } from './top-rated';
 import { onWatchedRenderCard, onQueueRenderCard } from './watched-queue';
 import Pagination from 'tui-pagination';
 import { refs } from './common/refs';
+import { backToTop } from './btt';
 import {
   HOME_SEARCH_TYPE,
   TOP_SEARCH_TYPE,
@@ -65,6 +66,7 @@ export const initPagination = ({ page, itemsPerPage, totalItems }) => {
         const formattedData = dataFormat(response.results, genres);
         setDataToStorageForHome(page, formattedData);
         renderListCard(formattedData);
+        backToTop();
       } catch (error) {
         console.log(error);
       }
@@ -74,16 +76,17 @@ export const initPagination = ({ page, itemsPerPage, totalItems }) => {
         const formattedData = dataFormat(response.results, genres);
         setDataToStorageForMain(formattedData);
         renderListCard(formattedData);
+        backToTop();
       } catch (error) {
         console.log(error);
       }
     } else if (paginationSettings.searchType === INPUT_SEARCH_TYPE) {
       try {
-        refs.searchForm.value = '';
         const response = await fetchSearchMovies(paginationSettings.pagination.searchQuery, page);
         const formattedData = dataFormat(response.results, genres);
         renderListCard(formattedData);
         setDataToStorageForMain(formattedData);
+        backToTop();
       } catch (error) {
         console.log(error);
       }
