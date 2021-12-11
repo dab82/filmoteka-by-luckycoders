@@ -28,6 +28,7 @@ async function onInput() {
     );
     if (totalItems === 0) {
       console.log('no info with such query');
+      refs.searchForm.value = '';
       return;
     }
 
@@ -37,6 +38,7 @@ async function onInput() {
     const formattedData = dataFormat(results, genres);
     renderListCard(formattedData);
     setDataToStorageForMain(formattedData);
+    // refs.searchForm.value = '';
   } catch (error) {
     console.log(error);
   }
