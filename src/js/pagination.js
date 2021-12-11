@@ -6,9 +6,16 @@ import { dataFormat } from './helpers/data-format.js';
 import { renderListCard } from './helpers/render-list-card';
 import { setDataToStorageForHome } from './popular-movies-render';
 import { setDataToStorageForMain } from './top-rated';
+import { onWatchedRenderCard, onQueueRenderCard } from './watched-queue';
 import Pagination from 'tui-pagination';
 import { refs } from './common/refs';
-import { HOME_SEARCH_TYPE, TOP_SEARCH_TYPE, INPUT_SEARCH_TYPE } from './common/search-types';
+import {
+  HOME_SEARCH_TYPE,
+  TOP_SEARCH_TYPE,
+  INPUT_SEARCH_TYPE,
+  WATCHED_SEARCH_TYPE,
+  QUEUE_SEARCH_TYPE,
+} from './common/search-types';
 import sprite from '../images/sprite.svg';
 
 const arrowIcon = `${sprite}#icon-arrow`;
