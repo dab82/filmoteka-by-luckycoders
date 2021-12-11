@@ -5,25 +5,19 @@ import { STORAGE_QUEUE_KEY } from './common/keys';
 import { STORAGE_WATCHED_KEY } from './common/keys';
 import { removeMod } from './modal-btn-mods';
 import ApiLocalStorege from './local-storage-library';
+import {preloader} from './preloader';
 
 let data = [];
 
-
-  window.onload = function () {
-    document.body.classList.add('loaded');
+preloader();
   
- 
-  window.setTimeout(function () {
-    document.body.classList.add('loaded');
-    document.body.classList.remove('loaded_hiding');
-  }, 500);
-}
   const refs = {
     body: document.querySelector('body'),
     link: document.querySelector('.list-card__link'),
     openModal: document.querySelector('.list-card'),
     modal: document.querySelector('[data-modal]'),
   };
+
    refs.openModal.addEventListener('click', selectFilm);
 
   function selectFilm(event) {
@@ -41,11 +35,7 @@ let data = [];
       }
       
       data = dataLS.filter(dat => dat.id == elementId);
-
-      // if(filmToQueue){
-      //   renderModal(...filmToQueue);
-      //   toggleModal(event);
-      // }else{
+      
       setDataToLocalStorage(data);
       renderModal(...data);
       
@@ -61,12 +51,10 @@ let data = [];
       if (filmToWatched) {
         removeMod(btnRefs.addWatched, 'watched');
       }
-      toggleModal(event);
-      // }
 
-      // setDataToLocalStorage(data);
-      // renderModal(...data);
-      // toggleModal(event);
+      
+      toggleModal(event);
+      
 
       const closeModalBtn = document.querySelector('[data-modal-close]');
       closeModalBtn.addEventListener('click', closeModal);
