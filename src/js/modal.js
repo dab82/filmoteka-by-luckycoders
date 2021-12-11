@@ -8,29 +8,30 @@ import ApiLocalStorege from './local-storage-library';
 
 let data = [];
 
-if (localStorage.getItem(STORAGE_MAIN_KEY) === null) {
+
   window.onload = function () {
     document.body.classList.add('loaded');
-  }
-} else {
+  
+ 
   window.setTimeout(function () {
     document.body.classList.add('loaded');
     document.body.classList.remove('loaded_hiding');
   }, 500);
+}
   const refs = {
     body: document.querySelector('body'),
     link: document.querySelector('.list-card__link'),
     openModal: document.querySelector('.list-card'),
     modal: document.querySelector('[data-modal]'),
   };
-
-  refs.openModal.addEventListener('click', selectFilm);
+   refs.openModal.addEventListener('click', selectFilm);
 
   function selectFilm(event) {
+    
     if (event.target !== event.currentTarget) {
       let element = findAncestor(event.target, '.list-card__link');
       const elementId = element.getAttribute('data-card-id');
-
+      
       let dataLS = null;
 
       try {
@@ -38,7 +39,7 @@ if (localStorage.getItem(STORAGE_MAIN_KEY) === null) {
       } catch {
         return;
       }
-
+      
       data = dataLS.filter(dat => dat.id == elementId);
 
       // if(filmToQueue){
@@ -47,6 +48,7 @@ if (localStorage.getItem(STORAGE_MAIN_KEY) === null) {
       // }else{
       setDataToLocalStorage(data);
       renderModal(...data);
+      
       const btnRefs = {
         addQueue: document.querySelector('[data-modal-queue]'),
         addWatched: document.querySelector('[data-modal-watched]'),
@@ -124,4 +126,4 @@ if (localStorage.getItem(STORAGE_MAIN_KEY) === null) {
       }
     }
   }
-}
+
