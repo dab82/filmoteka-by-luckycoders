@@ -9,7 +9,14 @@ import ApiLocalStorege from './local-storage-library';
 let data = [];
 
 if (localStorage.getItem(STORAGE_MAIN_KEY) === null) {
+  window.onload = function () {
+    document.body.classList.add('loaded');
+  }
 } else {
+  window.setTimeout(function () {
+    document.body.classList.add('loaded');
+    document.body.classList.remove('loaded_hiding');
+  }, 500);
   const refs = {
     body: document.querySelector('body'),
     link: document.querySelector('.list-card__link'),
