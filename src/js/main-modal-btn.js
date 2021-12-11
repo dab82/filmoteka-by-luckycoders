@@ -2,6 +2,9 @@ import { refs } from './common/refs';
 import { STORAGE_QUEUE_KEY, STORAGE_WATCHED_KEY } from './common/keys';
 import { addMod, removeMod } from './modal-btn-mods';
 import ApiLocalStorege from './local-storage-library';
+import { paginationSettings } from './pagination';
+import { WATCHED_SEARCH_TYPE, QUEUE_SEARCH_TYPE } from './common/search-types';
+import { onWatchedRenderCard, onQueueRenderCard } from './watched-queue';
 
 refs.backdrop.addEventListener('transitionend', onAddLisenerModalBtn);
 
@@ -35,6 +38,9 @@ function onClickBtnQueue(e) {
   } else if (e.target.classList.contains('remove-from-queue')) {
     ApiLocalStorege.delCard(STORAGE_QUEUE_KEY);
     addMod(e.target, 'queue');
+    if (paginationSettings.searchType === QUEUE_SEARCH_TYPE) {
+      onQueueRenderCard();
+    }
   }
 }
 function onClickBtnWatched(e) {
@@ -44,5 +50,8 @@ function onClickBtnWatched(e) {
   } else if (e.target.classList.contains('remove-from-watched')) {
     ApiLocalStorege.delCard(STORAGE_WATCHED_KEY);
     addMod(e.target, 'watched');
+    if (paginationSettings.searchType === WATCHED_SEARCH_TYPE) {
+      onWatchedRenderCard();
+    }
   }
 }

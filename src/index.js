@@ -8,9 +8,8 @@ import './sass/main.scss';
 //IMPORT JS
 import './js/popular-movies-render';
 import './js/search-movies-render';
-import './js/onhome-click-render';
-import './js/header.js';
 import './js/top-rated';
+import './js/header.js';
 import './js/modal.js';
 import './js/main-modal-btn';
 import './js/watched-queue';
