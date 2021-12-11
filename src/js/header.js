@@ -1,5 +1,5 @@
 import { refs } from "./common/refs";
-import { STORAGE_WATCHED_KEY, STORAGE_QUEUE_KEY } from "./common/keys";
+import { STORAGE_WATCHED_KEY, STORAGE_MAIN_KEY } from "./common/keys";
 import { renderListCard } from './helpers/render-list-card';
 
 function clickLib() {
