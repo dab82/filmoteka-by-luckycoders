@@ -2,7 +2,7 @@ import { refs } from './common/refs';
 import { STORAGE_WATCHED_KEY, STORAGE_QUEUE_KEY, STORAGE_MAIN_KEY } from './common/keys';
 import { renderListCard } from './helpers/render-list-card';
 import { setDataToStorageForMain } from './helpers/update-main-key';
-import { paginationSettings } from './pagination';
+import { paginationSettings } from './helpers/pagination';
 import { WATCHED_SEARCH_TYPE, QUEUE_SEARCH_TYPE } from './common/search-types';
 
 refs.watchedBtn.addEventListener('click', onWatchedRenderCard);

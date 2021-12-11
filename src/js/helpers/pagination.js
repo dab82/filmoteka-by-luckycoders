@@ -1,23 +1,23 @@
-import { fetchPopularMovies } from './api-service-popular';
-import { fetchTopMovies } from './api-service-top';
-import { fetchSearchMovies } from './api-service-search';
-import { genres } from './common/genres';
-import { dataFormat } from './helpers/data-format.js';
-import { renderListCard } from './helpers/render-list-card';
-import { setDataToStorageForHome } from './popular-movies-render';
-import { setDataToStorageForMain } from './top-rated';
-import { onWatchedRenderCard, onQueueRenderCard } from './watched-queue';
+import { fetchPopularMovies } from '../api/api-service-popular';
+import { fetchTopMovies } from '../api/api-service-top';
+import { fetchSearchMovies } from '../api/api-service-search';
+import { genres } from '../common/genres';
+import { dataFormat } from './data-format.js';
+import { renderListCard } from './render-list-card';
+import { setDataToStorageForHome } from '../popular-movies-render';
+import { setDataToStorageForMain } from '../top-rated';
+import { onWatchedRenderCard, onQueueRenderCard } from '../watched-queue';
 import Pagination from 'tui-pagination';
-import { refs } from './common/refs';
-import { backToTop } from './btt';
+import { refs } from '../common/refs';
+import { backToTop } from '../btt';
 import {
   HOME_SEARCH_TYPE,
   TOP_SEARCH_TYPE,
   INPUT_SEARCH_TYPE,
   WATCHED_SEARCH_TYPE,
   QUEUE_SEARCH_TYPE,
-} from './common/search-types';
-import sprite from '../images/sprite.svg';
+} from '../common/search-types';
+import sprite from '../../images/sprite.svg';
 
 const arrowIcon = `${sprite}#icon-arrow`;
 const dotsIcon = `${sprite}#icon-dots`;

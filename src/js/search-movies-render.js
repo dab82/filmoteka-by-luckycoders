@@ -1,10 +1,10 @@
 import { genres } from './common/genres';
 import { dataFormat } from './helpers/data-format.js';
 import { renderListCard } from './helpers/render-list-card';
-import { fetchSearchMovies } from './api-service-search';
+import { fetchSearchMovies } from './api/api-service-search';
 import { debounce } from 'lodash';
 import { refs } from './common/refs';
-import { paginationSettings } from './pagination';
+import { paginationSettings } from './helpers/pagination';
 import { setDataToStorageForMain } from './top-rated';
 import { INPUT_SEARCH_TYPE } from './common/search-types';
 

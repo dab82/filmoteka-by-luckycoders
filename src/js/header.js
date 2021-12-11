@@ -3,7 +3,7 @@ import { STORAGE_WATCHED_KEY, STORAGE_MAIN_KEY, STORAGE_HOME_KEY } from './commo
 import { renderListCard } from './helpers/render-list-card';
 import { setDataToStorageForMain } from './helpers/update-main-key';
 import { onWatchedRenderCard } from './watched-queue';
-import { paginationSettings } from './pagination';
+import { paginationSettings } from './helpers/pagination';
 import { HOME_SEARCH_TYPE } from './common/search-types';
 
 refs.logo.addEventListener('click', clickHome);

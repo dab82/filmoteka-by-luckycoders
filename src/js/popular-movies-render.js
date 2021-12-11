@@ -1,9 +1,9 @@
-import { fetchPopularMovies } from './api-service-popular';
+import { fetchPopularMovies } from './api/api-service-popular';
 import { genres } from './common/genres';
 import { dataFormat } from './helpers/data-format.js';
 import { STORAGE_HOME_KEY, STORAGE_MAIN_KEY } from './common/keys';
 import { renderListCard } from './helpers/render-list-card';
-import { initPagination, paginationSettings } from './pagination';
+import { initPagination, paginationSettings } from './helpers/pagination';
 import { HOME_SEARCH_TYPE } from './common/search-types';
 
 const refs = {

@@ -1,8 +1,8 @@
 import { refs } from './common/refs';
 import { STORAGE_QUEUE_KEY, STORAGE_WATCHED_KEY } from './common/keys';
-import { addMod, removeMod } from './modal-btn-mods';
-import ApiLocalStorege from './local-storage-library';
-import { paginationSettings } from './pagination';
+import { addMod, removeMod } from './helpers/modal-btn-mods';
+import ApiLocalStorege from './api/local-storage-library';
+import { paginationSettings } from './helpers/pagination';
 import { WATCHED_SEARCH_TYPE, QUEUE_SEARCH_TYPE } from './common/search-types';
 import { onWatchedRenderCard, onQueueRenderCard } from './watched-queue';
 
