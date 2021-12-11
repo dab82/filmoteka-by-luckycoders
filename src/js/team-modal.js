@@ -1,8 +1,81 @@
 import * as basicLightbox from 'basiclightbox';
 
-import { developers } from './common/developers-obj';
+import dimaUrl from '../images/team/dima.jpg';
+import annaUrl from '../images/team/anna.jpg';
+import yevheniiaUrl from '../images/team/yevheniia.jpg';
+import igorUrl from '../images/team/igor.jpg';
+import andreyUrl from '../images/team/andrey.jpg';
+import kateUrl from '../images/team/kate.jpg';
+import lanaUrl from '../images/team/lana.jpg';
+import nataliaUrl from '../images/team/natalia.jpg';
+import leoUrl from '../images/team/leo.jpg';
 
 import spriteUrl from '../images/sprite.svg';
+
+const developers = [
+  {
+    nameDev: 'Бонадренко Дмитрий',
+    photo: `${dimaUrl}`,
+    roleDev: 'Team-lead',
+    gitDev: 'https://github.com/dab82',
+  },
+  // 2
+  {
+    nameDev: 'Самсоненко Анна',
+    photo: `${annaUrl}`,
+    roleDev: 'Scrum-master',
+    gitDev: 'https://github.com/AnnSamsonenko',
+  },
+  // 3
+  {
+    nameDev: 'Волкова Евгения',
+    photo: `${yevheniiaUrl}`,
+    roleDev: 'Front-end Developer',
+    gitDev: 'https://github.com/YevheniiaVolkova',
+  },
+  // 4
+  {
+    nameDev: 'Тарасов Игорь',
+    photo: `${igorUrl}`,
+    roleDev: 'Front-end Developer',
+    gitDev: 'https://github.com/ITigor1985',
+  },
+  // 5
+  {
+    nameDev: 'Шевченко Андрей',
+    photo: `${andreyUrl}`,
+    roleDev: 'Front-end Developer',
+    gitDev: 'https://github.com/shevchenko-andrey',
+  },
+  // 6
+  {
+    nameDev: 'Белявская Екатерина',
+    photo: `${kateUrl}`,
+    roleDev: 'Front-end Developer',
+    gitDev: 'https://github.com/beliavskaja',
+  },
+  // 7
+  {
+    nameDev: 'Овчаренко Светлана',
+    photo: `${lanaUrl}`,
+    roleDev: 'Front-end Developer',
+    gitDev: 'https://github.com/O-Lana',
+  },
+  // 8
+  {
+    nameDev: 'Ступка Наталья',
+    photo: `${nataliaUrl}`,
+    roleDev: 'Front-end Developer',
+    gitDev: 'https://github.com/NataliaStupka',
+  },
+  // 9
+  {
+    nameDev: 'Лео (Nguyen Long)',
+    photo: `${leoUrl}`,
+    roleDev: 'Front-end Developer',
+    gitDev: 'https://github.com/HLongNguyen0',
+  },
+];
 
 const markupTeamCard = developers
   .map(({ nameDev, photo, roleDev, gitDev }) => {
@@ -17,7 +90,6 @@ const markupTeamCard = developers
 </li>`;
   })
   .join('');
-
 const markupModal = `<a href="https://github.com/dab82/filmoteka-by-luckycoders" target"_blank" class="team-title">LUCKY&#127808;CODERS</a>
  <button type='button' class='modal-window__close-btn' data-modal-close>
     <span class='material-icons'>close</span>
