@@ -143,4 +143,7 @@ body.dark-theme {
   & .top-rated-btn {
     color: var(--primary-white-color);
   }
+  & .preloader {
+    background: url(../images/nebo.jpg);
+  }
 }

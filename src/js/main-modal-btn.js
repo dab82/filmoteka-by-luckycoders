@@ -5,6 +5,8 @@ import ApiLocalStorege from './api/local-storage-library';
 import { paginationSettings } from './helpers/pagination';
 import { WATCHED_SEARCH_TYPE, QUEUE_SEARCH_TYPE } from './common/search-types';
 import { onWatchedRenderCard, onQueueRenderCard } from './watched-queue';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { settingsNotify } from './common/settings-for-notiflix';
 
 refs.backdrop.addEventListener('transitionend', onAddLisenerModalBtn);
 
@@ -35,7 +37,10 @@ function onClickBtnQueue(e) {
   if (e.target.classList.contains('add-to-queue')) {
     const canAddCard = ApiLocalStorege.addCard(STORAGE_QUEUE_KEY);
     if (!canAddCard) {
-      alert('library is full');
+      Notify.failure(
+        'Your library is full. Please remove a couple of movies to free some space.',
+        settingsNotify,
+      );
       return;
     }
     removeMod(e.target, 'queue');
@@ -51,7 +56,10 @@ function onClickBtnWatched(e) {
   if (e.target.classList.contains('add-to-watched')) {
     const canAddCard = ApiLocalStorege.addCard(STORAGE_WATCHED_KEY);
     if (!canAddCard) {
-      alert('library is full');
+      Notify.failure(
+        'Your library is full. Please remove a couple of movies to free some space.',
+        settingsNotify,
+      );
       return;
     }
     removeMod(e.target, 'watched');

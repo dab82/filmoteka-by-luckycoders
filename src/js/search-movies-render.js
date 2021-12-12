@@ -19,9 +19,9 @@ refs.searchForm.addEventListener(
 
 async function onInput() {
   const searchQuery = refs.searchForm.value.trim();
-  if (searchQuery.trim() === '') {
-    Notify.failure('Please enter a movie name', settingsNotify);
-    return 
+  if (searchQuery === '') {
+    // Notify.failure('Please enter a movie name', settingsNotify);
+    return;
   }
 
   try {
@@ -30,9 +30,8 @@ async function onInput() {
       paginationSettings.startPage,
     );
     if (totalItems === 0) {
-     Notify.warning('Nothing found', settingsNotify);
-      refs.searchForm.value = '';
-      return  
+      Notify.warning('Nothing found. Please try again', settingsNotify);
+      return;
     }
 
     paginationSettings.pagination.reset(totalItems);
