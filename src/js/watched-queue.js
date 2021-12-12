@@ -45,8 +45,9 @@ export function onQueueRenderCard() {
 
 function renderFiller() {
   const fillerMarkup = `
-    <img class="filler__img" src="${jakeGif}" alt="jake-the-doge">
-    <p class="filler__text">Nothing to see here. Go away.</p>
+  <p class="filler__text">Nothing to see here<br>Go away</p>  
+  <img class="filler__img" src="${jakeGif}" alt="jake-the-doge">
+    
   `;
   refs.fillerBox.insertAdjacentHTML('afterbegin', fillerMarkup);
 }
