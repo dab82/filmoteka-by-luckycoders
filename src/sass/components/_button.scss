@@ -15,13 +15,20 @@
   font-family: var(--main-font);
   text-transform: uppercase;
   text-align: center;
-
+  box-shadow: -5px -5px 5px -5px rgba(34, 60, 80, 0.6);
+ 
   @include min-width('medium') {
     min-width: 125px;
   }
   @include min-width('large') {
     min-width: 136px;
   }
+}
+.button:hover, .button:focus-visible, .button:active{
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.6) inset;
+  background-color:var(--brand-orange-color);
+  color: var(--primary-white-color);
 }
 
 .button.remove-from-watched,
@@ -31,6 +38,8 @@
   align-items: center;
   @include min-width('medium') {
     min-width: 125px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
   @include min-width('large') {
     min-width: 136px;
@@ -45,7 +54,10 @@
   box-shadow: 0px 8px 43px rgba(255, 107, 1, 0.6);
   border-radius: 5px;
   color: var(--primary-white-color);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+
 
 .button-theme {
   border-radius: 50px;
