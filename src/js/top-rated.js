@@ -6,16 +6,18 @@ import { paginationSettings } from './helpers/pagination';
 import { STORAGE_MAIN_KEY, STORAGE_HOME_KEY } from './common/keys';
 import { HOME_SEARCH_TYPE, TOP_SEARCH_TYPE } from './common/search-types';
 import { refs } from './common/refs';
+import { showLoader, hideLoader } from './helpers/preloader';
 
 refs.topRatedBtn.addEventListener('click', onClickTopRatedBtn);
 refs.popularBtn.addEventListener('click', onClickPopularBtn);
 
 async function onClickTopRatedBtn() {
+  showLoader();
   try {
     const { results, total_results: totalItems } = await fetchTopMovies(
       paginationSettings.startPage,
     );
-
+    hideLoader();
     paginationSettings.searchType = TOP_SEARCH_TYPE;
     paginationSettings.pagination.reset(totalItems);
 
