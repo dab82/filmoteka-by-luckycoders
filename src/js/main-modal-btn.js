@@ -33,7 +33,11 @@ function onAddLisenerModalBtn(event) {
 
 function onClickBtnQueue(e) {
   if (e.target.classList.contains('add-to-queue')) {
-    ApiLocalStorege.addCard(STORAGE_QUEUE_KEY);
+    const canAddCard = ApiLocalStorege.addCard(STORAGE_QUEUE_KEY);
+    if (!canAddCard) {
+      alert('library is full');
+      return;
+    }
     removeMod(e.target, 'queue');
   } else if (e.target.classList.contains('remove-from-queue')) {
     ApiLocalStorege.delCard(STORAGE_QUEUE_KEY);
@@ -45,7 +49,11 @@ function onClickBtnQueue(e) {
 }
 function onClickBtnWatched(e) {
   if (e.target.classList.contains('add-to-watched')) {
-    ApiLocalStorege.addCard(STORAGE_WATCHED_KEY);
+    const canAddCard = ApiLocalStorege.addCard(STORAGE_WATCHED_KEY);
+    if (!canAddCard) {
+      alert('library is full');
+      return;
+    }
     removeMod(e.target, 'watched');
   } else if (e.target.classList.contains('remove-from-watched')) {
     ApiLocalStorege.delCard(STORAGE_WATCHED_KEY);

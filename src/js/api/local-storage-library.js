@@ -8,6 +8,8 @@ function addCard(libraryKey) {
   library = validData(libraryKey);
   if (!library) {
     library = [];
+  } else if (library.length === 20) {
+    return false;
   }
   library.push(...dataFilm);
   returnData(libraryKey, library);
