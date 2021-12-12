@@ -20,7 +20,10 @@
 }
 
 .list-card {
-  margin-top: calc(-1 * 20px);
+  // margin-top: -20px;
+  & > :first-child {
+    margin-top: 0;
+  }
 }
 
 .list-card__item {
@@ -104,16 +107,22 @@
 
 // ------ BTN SEARCH--------------
 
+.search-btn {
+  margin-bottom: 30px;
+  @include min-width('medium') {
+    margin-bottom: 50px;
+  }
+}
+
 .search-btn-item {
-  margin-left: 8px;
+  margin-left: 15px;
   margin-top: 15px;
 }
 
 .search-btn-list {
-  margin-bottom: 50px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-left: -8px;
+  margin-left: -15px;
   margin-top: -15px;
 }
