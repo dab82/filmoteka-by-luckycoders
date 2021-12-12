@@ -34,6 +34,7 @@ function clickHome(e) {
   paginationSettings.pagination.reset(paginationSettings.totalItemsHome);
   renderListCard(storageData);
   setDataToStorageForMain(storageData);
+  refs.fillerBox.innerHTML = '';
 }
 
 function addClassLibrary() {
