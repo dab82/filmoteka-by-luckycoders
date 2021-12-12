@@ -100,7 +100,7 @@ const markupTeamCard = developers
 </li>`;
   })
   .join('');
-const markupModal = `<p class="team-title">LUCKY&#127808;CODERS</p>
+const markupModal = `<p class="team-title">LUCKY<span class="clover"></span>CODERS</p>
  <button type='button' class='modal-window__close-btn' data-modal-close>
     <span class='material-icons'>close</span>
   </button>
