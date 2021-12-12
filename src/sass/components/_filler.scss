@@ -1,0 +1,17 @@
+.filler {
+  width: fit-content;
+  margin: 0 auto;
+  border-radius: 24px;
+  background-color: #ffd610;
+  &__img {
+    padding-top: 10vh;
+    border-radius: 24px;
+  }
+  &__text {
+    display: block;
+    padding-bottom: 10vh;
+    font-weight: 400;
+    font-size: 24px;
+    text-align: center;
+  }
+}
