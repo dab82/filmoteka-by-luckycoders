@@ -9,7 +9,7 @@ import { setDataToStorageForMain, onClickPopularBtn } from './top-rated';
 import { INPUT_SEARCH_TYPE } from './common/search-types';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { settingsNotify } from './common/settings-for-notiflix';
-
+import { showLoader, hideLoader } from './helpers/preloader';
 const DEBOUNCE_DELAY = 300;
 
 refs.searchForm.addEventListener(
@@ -25,10 +25,12 @@ async function onInput() {
   }
 
   try {
+    showLoader();
     const { results, total_results: totalItems } = await fetchSearchMovies(
       searchQuery,
       paginationSettings.startPage,
     );
+    hideLoader();
     if (totalItems === 0) {
       Notify.warning('Nothing found. Please try again', settingsNotify);
       return;
