@@ -1,10 +1,9 @@
-export  function preloader (){window.onload = function () {
-    document.body.classList.add('loaded');
-  
- 
-  window.setTimeout(function () {
-    document.body.classList.add('loaded');
-    document.body.classList.remove('loaded_hiding');
-  }, 500);
+const contentContainer = document.querySelector('main');
+
+export function showLoader () {
+  contentContainer.classList.add('loading');
 }
+
+export function hideLoader () {
+  contentContainer.classList.remove('loading');
 }
