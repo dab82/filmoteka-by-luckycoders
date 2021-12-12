@@ -144,6 +144,7 @@ body.dark-theme {
     color: var(--primary-white-color);
   }
   & .preloader {
-    background: url(../images/nebo.jpg);
+    // background: url(../images/nebo.jpg);
+    background: transparent;
   }
 }
