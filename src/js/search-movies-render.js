@@ -5,7 +5,7 @@ import { fetchSearchMovies } from './api/api-service-search';
 import { debounce } from 'lodash';
 import { refs } from './common/refs';
 import { paginationSettings } from './helpers/pagination';
-import { setDataToStorageForMain } from './top-rated';
+import { setDataToStorageForMain, onClickPopularBtn } from './top-rated';
 import { INPUT_SEARCH_TYPE } from './common/search-types';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { settingsNotify } from './common/settings-for-notiflix';

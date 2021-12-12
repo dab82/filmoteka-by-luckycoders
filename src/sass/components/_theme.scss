@@ -1,30 +1,31 @@
 .theme-switch {
   display: flex;
   align-items: center;
-  padding-left: 192px;
+  padding-left: 206px;
   margin-bottom: 32px;
   @include min-width('medium') {
-    padding-left: 530px;
+    padding-left: 545px;
   }
 
   @include min-width('large') {
-    padding-left: 794px;
+    padding-left: 810px;
     margin-bottom: 10px;
   }
 }
 
 .theme-switch__icon {
   color: var(--primary-white-color);
-  height: 16px;
-  width: 16px;
+  height: 14px;
+  width: 14px;
+  transition: color 250ms ease-in-out;
 }
 
 .icon-sun {
-  margin-right: 8px;
+  margin-right: 4px;
 }
 
 .icon-moon {
-  margin-left: 8px;
+  margin-left: 4px;
 }
 
 .theme-switch__control {
@@ -32,8 +33,8 @@
   align-items: center;
   flex-shrink: 0;
   position: relative;
-  width: 40px;
-  height: 20px;
+  width: 36px;
+  height: 14px;
   border-radius: 50em;
   padding: 3px 0;
 }
@@ -66,9 +67,9 @@
 
 .theme-switch__marker {
   position: relative;
-  background-color: #fff;
-  width: 18px;
-  height: 18px;
+  background-color: var(--primary-white-color);
+  width: 13px;
+  height: 13px;
   border-radius: 50%;
   z-index: 2;
   pointer-events: none;
@@ -108,7 +109,7 @@ body.dark-theme {
   }
 
   & .theme-switch__icon {
-    fill: var(--brand-orange-color);
+    color: var(--brand-orange-color);
   }
 
   & .list-card__title {

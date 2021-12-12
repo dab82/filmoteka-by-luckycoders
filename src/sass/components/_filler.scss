@@ -1,16 +1,18 @@
 .filler {
-  width: fit-content;
+  width: 100%;
   margin: 0 auto;
   border-radius: 24px;
   background-color: #ffd610;
   &__img {
-    padding-top: 10vh;
+    width: 100%;
+    // padding-top: 10vh;
     border-radius: 24px;
   }
   &__text {
     display: block;
-    padding-bottom: 10vh;
-    font-weight: 400;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    font-weight: bold;
     font-size: 24px;
     text-align: center;
   }
