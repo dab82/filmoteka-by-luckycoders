@@ -15,63 +15,72 @@ import spriteUrl from '../images/sprite.svg';
 
 const developers = [
   {
-    nameDev: 'Бонадренко Дмитрий',
+    nameDev: 'Дмитрий',
+    surnameDev: 'Бонадренко',
     photo: `${dimaUrl}`,
     roleDev: 'Team-lead',
     gitDev: 'https://github.com/dab82',
   },
   // 2
   {
-    nameDev: 'Самсоненко Анна',
+    nameDev: 'Анна',
+    surnameDev: 'Самсоненко',
     photo: `${annaUrl}`,
     roleDev: 'Scrum-master',
     gitDev: 'https://github.com/AnnSamsonenko',
   },
   // 3
   {
-    nameDev: 'Волкова Евгения',
+    nameDev: 'Евгения',
+    surnameDev: 'Волкова',
     photo: `${yevheniiaUrl}`,
     roleDev: 'Front-end Developer',
     gitDev: 'https://github.com/YevheniiaVolkova',
   },
   // 4
   {
-    nameDev: 'Тарасов Игорь',
+    nameDev: 'Игорь',
+    surnameDev: 'Тарасов',
     photo: `${igorUrl}`,
     roleDev: 'Front-end Developer',
     gitDev: 'https://github.com/ITigor1985',
   },
   // 5
   {
-    nameDev: 'Шевченко Андрей',
+    nameDev: 'Андрей',
+    surnameDev: 'Шевченко',
     photo: `${andreyUrl}`,
     roleDev: 'Front-end Developer',
     gitDev: 'https://github.com/shevchenko-andrey',
   },
   // 6
   {
-    nameDev: 'Белявская Екатерина',
+    nameDev: 'Екатерина',
+    surnameDev: 'Белявская',
     photo: `${kateUrl}`,
     roleDev: 'Front-end Developer',
     gitDev: 'https://github.com/beliavskaja',
   },
   // 7
   {
-    nameDev: 'Овчаренко Светлана',
+    nameDev: 'Светлана',
+    surnameDev: 'Овчаренко',
     photo: `${lanaUrl}`,
     roleDev: 'Front-end Developer',
     gitDev: 'https://github.com/O-Lana',
   },
   // 8
   {
-    nameDev: 'Ступка Наталья',
+    nameDev: 'Наталья',
+    surnameDev: 'Ступка',
     photo: `${nataliaUrl}`,
     roleDev: 'Front-end Developer',
     gitDev: 'https://github.com/NataliaStupka',
   },
   // 9
   {
-    nameDev: 'Лео (Nguyen Long)',
+    nameDev: '(Nguyen Long)',
+    surnameDev: 'Лео',
     photo: `${leoUrl}`,
     roleDev: 'Front-end Developer',
     gitDev: 'https://github.com/HLongNguyen0',
@@ -79,11 +88,11 @@ const developers = [
 ];
 
 const markupTeamCard = developers
-  .map(({ nameDev, photo, roleDev, gitDev }) => {
+  .map(({ surnameDev, nameDev, photo, roleDev, gitDev }) => {
     return `
 <li class="team-card">
     <img src="${photo}" alt="${nameDev}" class="team-image">
-    <p class="team-name">${nameDev}</p>
+    <p class="team-name">${surnameDev}<br>${nameDev}</p>
     <p class="team-role">${roleDev}</p>
     <a href="${gitDev}" target="_blank" class="team-git"><svg class="logo__icon" width="24" height="24">
       <use href="${spriteUrl}#github"></use>
