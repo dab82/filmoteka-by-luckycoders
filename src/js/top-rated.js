@@ -31,7 +31,7 @@ export function setDataToStorageForMain(formattedData) {
   localStorage.setItem(STORAGE_MAIN_KEY, JSON.stringify(formattedData));
 }
 
-function onClickPopularBtn() {
+export function onClickPopularBtn() {
   const dataFromStorage = localStorage.getItem(STORAGE_HOME_KEY);
   const parsedDataFromStorage = JSON.parse(dataFromStorage);
   paginationSettings.searchType = HOME_SEARCH_TYPE;

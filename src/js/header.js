@@ -29,6 +29,7 @@ function clickHome(e) {
   activeBorderHome();
   // возвращает кнопки ТОР-POPULAR
   hiddenSearchBtn();
+  refs.searchForm.value = "";
   refs.pagination.classList.remove('visually-hidden');
   const storageData = JSON.parse(localStorage.getItem(STORAGE_HOME_KEY));
   paginationSettings.searchType = HOME_SEARCH_TYPE;

@@ -5,7 +5,7 @@ import { fetchSearchMovies } from './api/api-service-search';
 import { debounce } from 'lodash';
 import { refs } from './common/refs';
 import { paginationSettings } from './helpers/pagination';
-import { setDataToStorageForMain } from './top-rated';
+import { setDataToStorageForMain, onClickPopularBtn } from './top-rated';
 import { INPUT_SEARCH_TYPE } from './common/search-types';
 
 const DEBOUNCE_DELAY = 300;
@@ -18,6 +18,7 @@ refs.searchForm.addEventListener(
 async function onInput() {
   const searchQuery = refs.searchForm.value.trim();
   if (searchQuery.trim() === '') {
+    onClickPopularBtn();
     return;
   }
 

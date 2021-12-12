@@ -5,11 +5,8 @@ import { STORAGE_QUEUE_KEY } from './common/keys';
 import { STORAGE_WATCHED_KEY } from './common/keys';
 import { removeMod } from './helpers/modal-btn-mods';
 import ApiLocalStorege from './api/local-storage-library';
-import { preloader } from './helpers/preloader';
 
 let data = [];
-
-preloader();
 
 const refs = {
   body: document.querySelector('body'),
