@@ -1,4 +1,5 @@
 import * as basicLightbox from 'basiclightbox';
+import showConfetti from './common/confetti';
 
 import dimaUrl from '../images/team/dima.jpg';
 import annaUrl from '../images/team/anna.jpg';
@@ -90,7 +91,7 @@ const markupTeamCard = developers
 </li>`;
   })
   .join('');
-const markupModal = `<a href="https://github.com/dab82/filmoteka-by-luckycoders" target"_blank" class="team-title">LUCKY&#127808;CODERS</a>
+const markupModal = `<p class="team-title">LUCKY&#127808;CODERS</p>
  <button type='button' class='modal-window__close-btn' data-modal-close>
     <span class='material-icons'>close</span>
   </button>
@@ -105,6 +106,8 @@ container.addEventListener('click', openModal);
 const modal = basicLightbox.create(markupModal);
 
 function openModal(e) {
+  e.preventDefault();
+  showConfetti();
   modal.show();
   const body = document.querySelector('body');
   body.classList.add('bg-scrolling-element-when-modal-open');
@@ -131,5 +134,6 @@ function openModal(e) {
   function closeBackdrop(e) {
     modal.close();
     body.classList.remove('bg-scrolling-element-when-modal-open');
+    backdrop.removeEventListener('click', closeBackdrop);
   }
 }
