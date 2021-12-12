@@ -14,4 +14,5 @@ export const refs = {
   gallery: document.querySelector('.movies'),
   logo: document.querySelector('.logo'),
   searchForm: document.querySelector('.search-form input'),
+  fillerBox: document.querySelector('.filler'),
 };

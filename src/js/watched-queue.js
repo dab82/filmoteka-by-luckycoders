@@ -4,6 +4,7 @@ import { renderListCard } from './helpers/render-list-card';
 import { setDataToStorageForMain } from './helpers/update-main-key';
 import { paginationSettings } from './helpers/pagination';
 import { WATCHED_SEARCH_TYPE, QUEUE_SEARCH_TYPE } from './common/search-types';
+import jakeGif from '../images/library/jake.gif';
 
 refs.watchedBtn.addEventListener('click', onWatchedRenderCard);
 refs.queueBtn.addEventListener('click', onQueueRenderCard);
@@ -17,8 +18,11 @@ export function onWatchedRenderCard() {
     paginationSettings.searchType = WATCHED_SEARCH_TYPE;
     renderListCard(parsedDataGetWatched);
     setDataToStorageForMain(parsedDataGetWatched);
+    refs.fillerBox.innerHTML = '';
   } else {
     refs.pagination.classList.add('visually-hidden');
+    refs.fillerBox.innerHTML = '';
+    renderFiller();
   }
 }
 
@@ -31,7 +35,18 @@ export function onQueueRenderCard() {
     paginationSettings.searchType = QUEUE_SEARCH_TYPE;
     renderListCard(parsedDataGetQueue);
     setDataToStorageForMain(parsedDataGetQueue);
+    refs.fillerBox.innerHTML = '';
   } else {
     refs.pagination.classList.add('visually-hidden');
+    refs.fillerBox.innerHTML = '';
+    renderFiller();
   }
+}
+
+function renderFiller() {
+  const fillerMarkup = `
+    <img class="filler__img" src="${jakeGif}" alt="jake-the-doge">
+    <p class="filler__text">Nothing to see here. Go away.</p>
+  `;
+  refs.fillerBox.insertAdjacentHTML('afterbegin', fillerMarkup);
 }

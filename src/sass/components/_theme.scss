@@ -123,18 +123,18 @@ body.dark-theme {
     fill: var(--primary-white-color);
   }
 
-  & .tui-pagination .tui-ico-prev,
-  .tui-pagination .tui-ico-next {
+  & .tui-pagination .tui-ico-first,
+  .tui-pagination .tui-ico-last {
     fill: var(--primary-white-color);
   }
 
-  & .tui-pagination .hide-prev,
-  .tui-pagination .hide-next {
+  & .tui-pagination .hide-first,
+  .tui-pagination .hide-last {
     background: rgba(247, 247, 247, 0.1);
   }
 
-  & .tui-pagination .hide-prev:hover,
-  & .tui-pagination .hide-next:hover {
+  & .tui-pagination .hide-first:hover,
+  & .tui-pagination .hide-last:hover {
     background: var(--brand-orange-color);
   }
 
