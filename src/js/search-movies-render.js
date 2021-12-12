@@ -7,6 +7,8 @@ import { refs } from './common/refs';
 import { paginationSettings } from './helpers/pagination';
 import { setDataToStorageForMain } from './top-rated';
 import { INPUT_SEARCH_TYPE } from './common/search-types';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { settingsNotify } from './common/settings-for-notiflix';
 
 const DEBOUNCE_DELAY = 300;
 
@@ -18,7 +20,8 @@ refs.searchForm.addEventListener(
 async function onInput() {
   const searchQuery = refs.searchForm.value.trim();
   if (searchQuery.trim() === '') {
-    return;
+    Notify.failure('Please enter a movie name', settingsNotify);
+    return 
   }
 
   try {
@@ -27,9 +30,9 @@ async function onInput() {
       paginationSettings.startPage,
     );
     if (totalItems === 0) {
-      console.log('no info with such query');
+     Notify.warning('Nothing found', settingsNotify);
       refs.searchForm.value = '';
-      return;
+      return  
     }
 
     paginationSettings.pagination.reset(totalItems);
