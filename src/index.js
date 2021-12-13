@@ -6,6 +6,7 @@ import 'basiclightbox/dist/basicLightbox.min.css';
 import './sass/main.scss';
 
 //IMPORT JS
+import './js/preloader';
 import './js/popular-movies-render';
 import './js/search-movies-render';
 import './js/top-rated';
