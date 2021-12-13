@@ -6,10 +6,6 @@ import { renderListCard } from './helpers/render-list-card';
 import { initPagination, paginationSettings } from './helpers/pagination';
 import { HOME_SEARCH_TYPE } from './common/search-types';
 
-const refs = {
-  popularMovieContainer: document.querySelector('.list-card'),
-};
-
 //эта функция получает данные с бэкенда
 async function getPopularMoviesData(renderPage) {
   try {

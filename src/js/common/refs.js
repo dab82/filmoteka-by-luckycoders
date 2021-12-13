@@ -11,6 +11,7 @@ export const refs = {
   queueBtn: document.querySelector('.queue-btn'),
   popularBtn: document.querySelector('.popular-btn'),
   topRatedBtn: document.querySelector('.top-rated-btn'),
+  searchBtnContainer: document.querySelector('.search-btn'),
   gallery: document.querySelector('.movies'),
   logo: document.querySelector('.logo'),
   searchForm: document.querySelector('.search-form input'),
