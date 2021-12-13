@@ -2,7 +2,7 @@
   <div class="container header-container">
     <div class="nav-section">
       <a href="./index.html" class="logo">
-        <svg class="logo__icon" width="24" height="24">
+        <svg class="logo__icon animate__zoomIn" width="24" height="24">
           <use href="./images/sprite.svg#icon-film"></use>
         </svg>
         <span class="logo__title">Filmoteka</span>
@@ -26,13 +26,8 @@
       </svg>
 
       <div class="theme-switch__control">
-        <input
-          class="theme-switch__toggle"
-          type="checkbox"
-          name="theme"
-          id="theme-switch-toggle"
-          aria-label="Переключить между тёмной и светлой темой"
-        />
+        <input class="theme-switch__toggle" type="checkbox" name="theme" id="theme-switch-toggle"
+          aria-label="Переключить между тёмной и светлой темой" />
         <label aria-hidden="true" class="theme-switch__track" for="theme-switch-toggle"> </label>
         <div aria-hidden="true" class="theme-switch__marker"></div>
       </div>
@@ -44,13 +39,7 @@
 
     <div class="header-search">
       <form class="search-form">
-        <input
-          type="text"
-          class="input"
-          name="searchQuery"
-          autocomplete="off"
-          placeholder="Поиск фильмов"
-        />
+        <input type="text" class="input" name="searchQuery" autocomplete="off" placeholder="Поиск фильмов" />
         <div class="search__btn">
           <svg class="search__icon">
             <use href="./images/sprite.svg#icon-search" width="12" height="12"></use>
