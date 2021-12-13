@@ -99,6 +99,11 @@
     -khtml-opacity: 0.7;
     transform: scale(1.05);
   }
+
+  @media screen and (max-width: 767px) {
+    width: 120px;
+    font-size: 16px;
+  }
 }
 
 .btn-lib {

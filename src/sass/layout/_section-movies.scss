@@ -117,6 +117,9 @@
 .search-btn-item {
   margin-left: 15px;
   margin-top: 15px;
+  @media screen and (max-width: 320px) {
+    flex-basis: calc((100% - 40px) / 2);
+  }
 }
 
 .search-btn-list {
