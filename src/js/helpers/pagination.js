@@ -5,7 +5,7 @@ import { genres } from '../common/genres';
 import { dataFormat } from './data-format.js';
 import { renderListCard } from './render-list-card';
 import { setDataToStorageForHome } from '../popular-movies-render';
-import { setDataToStorageForMain } from '../top-rated';
+import { setDataToStorageForMain } from './update-main-key';
 import Pagination from 'tui-pagination';
 import { refs } from '../common/refs';
 import { backToTop } from '../btt';
@@ -67,8 +67,8 @@ export const initPagination = ({ page, itemsPerPage, totalItems }) => {
       try {
         const response = await fetchTopMovies(page);
         const formattedData = dataFormat(response.results, genres);
-        setDataToStorageForMain(formattedData);
         renderListCard(formattedData);
+        setDataToStorageForMain(formattedData);
         backToTop();
       } catch (error) {
         console.log(error);
