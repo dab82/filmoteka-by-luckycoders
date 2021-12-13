@@ -13,8 +13,8 @@ export function onWatchedRenderCard() {
   refs.listContainer.innerHTML = '';
   let getWatched = localStorage.getItem(STORAGE_WATCHED_KEY);
   const parsedDataGetWatched = JSON.parse(getWatched);
+  refs.pagination.classList.add('visually-hidden');
   if (getWatched !== null && parsedDataGetWatched.length !== 0) {
-    paginationSettings.pagination.reset(parsedDataGetWatched.length);
     paginationSettings.searchType = WATCHED_SEARCH_TYPE;
     renderListCard(parsedDataGetWatched);
     setDataToStorageForMain(parsedDataGetWatched);
@@ -31,13 +31,11 @@ export function onQueueRenderCard() {
   let getQueue = localStorage.getItem(STORAGE_QUEUE_KEY);
   const parsedDataGetQueue = JSON.parse(getQueue);
   if (getQueue !== null && parsedDataGetQueue.length !== 0) {
-    paginationSettings.pagination.reset(parsedDataGetQueue.length);
     paginationSettings.searchType = QUEUE_SEARCH_TYPE;
     renderListCard(parsedDataGetQueue);
     setDataToStorageForMain(parsedDataGetQueue);
     refs.fillerBox.innerHTML = '';
   } else {
-    refs.pagination.classList.add('visually-hidden');
     refs.fillerBox.innerHTML = '';
     renderFiller();
   }
