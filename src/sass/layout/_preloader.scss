@@ -20,6 +20,7 @@
   &.done {
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
   }
 }
 
@@ -39,6 +40,7 @@
   &.done {
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
   }
 }
 
