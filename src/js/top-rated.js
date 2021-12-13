@@ -7,7 +7,7 @@ import { STORAGE_HOME_KEY } from './common/keys';
 import { HOME_SEARCH_TYPE, TOP_SEARCH_TYPE } from './common/search-types';
 import { setDataToStorageForMain } from './helpers/update-main-key';
 import { refs } from './common/refs';
-import { showLoader, hideLoader } from './helpers/preloader';
+import { showLoader, hideLoader } from './helpers/spinner';
 
 refs.topRatedBtn.addEventListener('click', onClickTopRatedBtn);
 refs.popularBtn.addEventListener('click', onClickPopularBtn);

@@ -9,7 +9,7 @@ import { setDataToStorageForMain } from './helpers/update-main-key';
 import { INPUT_SEARCH_TYPE } from './common/search-types';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { settingsNotify } from './common/settings-for-notiflix';
-import { showLoader, hideLoader } from './helpers/preloader';
+import { showLoader, hideLoader } from './helpers/spinner';
 const DEBOUNCE_DELAY = 300;
 
 refs.searchForm.addEventListener(
