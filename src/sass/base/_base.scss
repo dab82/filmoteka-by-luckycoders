@@ -3,12 +3,29 @@
   padding: 0;
 }
 
+body,
+html {
+  height: 100%;
+}
+
+.body-wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 1 auto;
+}
+
 body {
   font-family: var(--main-font);
   color: var(--text-color);
   transition: all 250ms ease-in-out;
 }
-body::-webkit-scrollbar { width: 0 !important }
+body::-webkit-scrollbar {
+  width: 0 !important;
+}
 picture,
 svg {
   display: block;
