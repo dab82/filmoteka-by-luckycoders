@@ -1,5 +1,7 @@
 import { fetchPopularMovies } from '../api/api-service-popular';
 import { fetchTopMovies } from '../api/api-service-top';
+import { fetchUpcomingMovies } from '../api/api-service-upcoming';
+import { fetchTrendingTvMovies } from '../api/api-service-trend-tv';
 import { fetchSearchMovies } from '../api/api-service-search';
 import { genres } from '../common/genres';
 import { dataFormat } from './data-format.js';
@@ -9,7 +11,7 @@ import { setDataToStorageForMain } from './update-main-key';
 import Pagination from 'tui-pagination';
 import { refs } from '../common/refs';
 import { backToTop } from '../btt';
-import { HOME_SEARCH_TYPE, TOP_SEARCH_TYPE, INPUT_SEARCH_TYPE } from '../common/search-types';
+import { HOME_SEARCH_TYPE, TOP_SEARCH_TYPE, INPUT_SEARCH_TYPE, UPCOMING_SEARCH_TYPE, TRENDING_TV_SEARCH_TYPE } from '../common/search-types';
 import sprite from '../../images/sprite.svg';
 
 const arrowIcon = `${sprite}#icon-arrow`;
@@ -73,7 +75,27 @@ export const initPagination = ({ page, itemsPerPage, totalItems }) => {
       } catch (error) {
         console.log(error);
       }
-    } else if (paginationSettings.searchType === INPUT_SEARCH_TYPE) {
+    }else if (paginationSettings.searchType === UPCOMING_SEARCH_TYPE) {
+      try {
+        const response = await fetchUpcomingMovies(page);
+        const formattedData = dataFormat(response.results, genres);
+        renderListCard(formattedData);
+        setDataToStorageForMain(formattedData);
+        backToTop();
+      } catch (error) {
+        console.log(error);
+      }
+    }else if (paginationSettings.searchType === TRENDING_TV_SEARCH_TYPE) {
+      try {
+        const response = await fetchTrendingTvMovies(page);
+        const formattedData = dataFormat(response.results, genres);
+        renderListCard(formattedData);
+        setDataToStorageForMain(formattedData);
+        backToTop();
+      } catch (error) {
+        console.log(error);
+      }
+    }else if (paginationSettings.searchType === INPUT_SEARCH_TYPE) {
       try {
         const response = await fetchSearchMovies(paginationSettings.pagination.searchQuery, page);
         const formattedData = dataFormat(response.results, genres);

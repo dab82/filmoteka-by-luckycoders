@@ -140,7 +140,9 @@ body.dark-theme {
   }
 
   & .popular-btn,
-  & .top-rated-btn {
+  & .top-rated-btn,
+  & .upcoming-btn,
+  & .trending-tv-btn {
     color: var(--primary-white-color);
   }
   & .spinner {

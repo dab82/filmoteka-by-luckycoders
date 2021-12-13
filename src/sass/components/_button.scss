@@ -16,7 +16,7 @@
   text-transform: uppercase;
   text-align: center;
   box-shadow: -5px -5px 5px -5px rgba(34, 60, 80, 0.6);
- 
+
   @include min-width('medium') {
     min-width: 125px;
   }
@@ -24,10 +24,13 @@
     min-width: 136px;
   }
 }
-.button:hover, .button:focus-visible, .button:active{
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+.button:hover,
+.button:focus-visible,
+.button:active {
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.6) inset;
-  background-color:var(--brand-orange-color);
+  background-color: var(--brand-orange-color);
   color: var(--primary-white-color);
 }
 
@@ -54,10 +57,9 @@
   box-shadow: 0px 8px 43px rgba(255, 107, 1, 0.6);
   border-radius: 5px;
   color: var(--primary-white-color);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-
 
 .button-theme {
   border-radius: 50px;
@@ -72,7 +74,9 @@
 }
 
 .popular-btn,
-.top-rated-btn {
+.top-rated-btn,
+.upcoming-btn,
+.trending-tv-btn {
   color: black;
   text-align: center;
   font-size: 20px;
