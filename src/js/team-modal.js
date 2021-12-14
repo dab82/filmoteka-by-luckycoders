@@ -133,7 +133,7 @@ function openModal(e) {
   }
 
   function closeModalHandler(e) {
-    if (e.code === 'Escape') {
+    if (e.key === 'Escape') {
       modal.close();
       body.classList.remove('bg-scrolling-element-when-modal-open');
       window.removeEventListener('keydown', closeModalHandler);
@@ -141,10 +141,11 @@ function openModal(e) {
   }
 
   function closeBackdrop(e) {
-    if (e.target === backdrop && !closeModalBtn) {
+    if (e.target === backdrop) {
       modal.close();
       body.classList.remove('bg-scrolling-element-when-modal-open');
       backdrop.removeEventListener('click', closeBackdrop);
+      
     }
   }
 }
