@@ -3,9 +3,13 @@
   margin: 0 auto;
   border-radius: 24px;
   background-color: #ffd610;
+  @include min-width('medium') {
+    width: 400px;
+    height: auto;
+  }
   &__img {
+    display: block;
     width: 100%;
-    // padding-top: 10vh;
     border-radius: 24px;
   }
   &__text {
