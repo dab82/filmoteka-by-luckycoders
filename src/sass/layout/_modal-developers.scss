@@ -1,5 +1,9 @@
 .basicLightbox {
-  overflow: hidden;
+  overflow-x: scroll;
+  // @include min-width('medium') {
+  //   overflow: hidden;
+  // }
+  // overflow: hidden;
 }
 
 .basicLightbox__placeholder {
