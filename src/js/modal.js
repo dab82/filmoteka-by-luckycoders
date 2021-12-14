@@ -50,7 +50,7 @@ function selectFilm(event) {
 
     toggleModal(event);
 
-    const closeModalBtn = document.querySelector('[data-modal-close]');
+    const closeModalBtn = document.querySelector('[data-modal-clos]');
     closeModalBtn.addEventListener('click', closeModal);
     refs.modal.addEventListener('click', closeBackdrop);
 
