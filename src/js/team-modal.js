@@ -140,12 +140,11 @@ function openModal(e) {
     }
   }
 
-  function closeBackdrop(e) {    
-    if(e.target === backdrop){
+  function closeBackdrop(e) {
+    if (e.target === backdrop && !closeModalBtn) {
       modal.close();
-    body.classList.remove('bg-scrolling-element-when-modal-open');
-    backdrop.removeEventListener('click', closeBackdrop);
+      body.classList.remove('bg-scrolling-element-when-modal-open');
+      backdrop.removeEventListener('click', closeBackdrop);
     }
-    
   }
 }
