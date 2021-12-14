@@ -42,6 +42,8 @@ function onClickBtnQueue(e) {
         settingsNotify,
       );
       return;
+    } else if (paginationSettings.searchType === QUEUE_SEARCH_TYPE) {
+      onQueueRenderCard();
     }
     removeMod(e.target, 'queue');
   } else if (e.target.classList.contains('remove-from-queue')) {
@@ -61,6 +63,8 @@ function onClickBtnWatched(e) {
         settingsNotify,
       );
       return;
+    } else if (paginationSettings.searchType === WATCHED_SEARCH_TYPE) {
+      onWatchedRenderCard();
     }
     removeMod(e.target, 'watched');
   } else if (e.target.classList.contains('remove-from-watched')) {

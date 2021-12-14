@@ -43,7 +43,7 @@ export function onQueueRenderCard() {
 
 function renderFiller() {
   const fillerMarkup = `
-  <p class="filler__text">Nothing to see here<br>Go away</p>  
+  <p class="filler__text">Nothing to see here<br>Add a movie please</p>  
   <img class="filler__img" src="${jakeGif}" alt="jake-the-doge">
     
   `;

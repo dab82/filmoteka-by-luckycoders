@@ -2,7 +2,7 @@
   position: fixed;
   bottom: 40px;
   right: 0;
-  z-index: 9999;
+  z-index: 1000;
   font-weight: bolder;
   padding: 5px;
   width: 40px;
@@ -24,6 +24,7 @@
   }
   @include min-width('large') {
     right: 10%;
+    bottom: 20%;
   }
 }
 
