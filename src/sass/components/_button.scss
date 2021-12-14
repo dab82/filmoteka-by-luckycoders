@@ -16,7 +16,7 @@
   text-transform: uppercase;
   text-align: center;
   box-shadow: -5px -5px 5px -5px rgba(34, 60, 80, 0.6);
-
+  transition: all var(--duration) var(--timing-function);
   @include min-width('medium') {
     min-width: 125px;
   }
@@ -24,11 +24,10 @@
     min-width: 136px;
   }
 }
+
 .button:hover,
 .button:focus-visible,
 .button:active {
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.6) inset;
   background-color: var(--brand-orange-color);
   color: var(--primary-white-color);
@@ -39,6 +38,7 @@
   width: 112px;
   display: flex;
   align-items: center;
+  transition: all var(--duration) var(--timing-function);
   @include min-width('medium') {
     min-width: 125px;
     padding-left: 10px;
@@ -57,19 +57,18 @@
   box-shadow: 0px 8px 43px rgba(255, 107, 1, 0.6);
   border-radius: 5px;
   color: var(--primary-white-color);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all var(--duration) var(--timing-function);
 }
 
 .button-theme {
   border-radius: 50px;
   color: var(--primary-white-color);
+  transition: all var(--duration) var(--timing-function);
 }
 
 .no-active:hover,
 .no-active:focus {
   background-color: rgba(255, 107, 1, 0.288);
-
   // background-color: #ff6b0165;
 }
 
@@ -90,7 +89,7 @@
   -webkit-box-shadow: 0 2px 8px rgba(255, 107, 1, 0.5), inset 0 1px rgba(255, 255, 255, 0.3),
     inset 0 10px rgba(255, 255, 255, 0.2), inset 0 10px 20px rgba(255, 255, 255, 0.25),
     inset 0 -15px 30px rgba(255, 107, 1, 0.3);
-
+  transition: all var(--duration) var(--timing-function);
   &:focus,
   &:hover {
     opacity: 0.7;
@@ -109,7 +108,7 @@
 .btn-lib {
   min-width: 130px;
   color: var(--primary-white-color);
-
+  transition: all var(--duration) var(--timing-function);
   @include min-width('medium') {
     min-width: 136px;
   }
@@ -117,6 +116,7 @@
 
 .btn-lib.no-active {
   border: 1px solid var(--primary-white-color);
+  transition: all var(--duration) var(--timing-function);
 }
 // .black.popular-btn {
 // }

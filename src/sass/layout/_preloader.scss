@@ -13,7 +13,7 @@
 
   background-color: #1a1817ea;
   z-index: 1001;
-
+  transition: all var(--duration) var(--timing-function);
   opacity: 1;
   visibility: visible;
 
