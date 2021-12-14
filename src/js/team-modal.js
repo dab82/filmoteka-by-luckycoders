@@ -140,9 +140,12 @@ function openModal(e) {
     }
   }
 
-  function closeBackdrop(e) {
-    modal.close();
+  function closeBackdrop(e) {    
+    if(e.target === backdrop){
+      modal.close();
     body.classList.remove('bg-scrolling-element-when-modal-open');
     backdrop.removeEventListener('click', closeBackdrop);
+    }
+    
   }
 }
