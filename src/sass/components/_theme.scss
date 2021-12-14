@@ -149,4 +149,19 @@ body.dark-theme {
     // background: url(../images/nebo.jpg);
     background: transparent;
   }
+  & .page-header,
+  & .page-lib {
+    box-shadow: -1px 7px 33px 6px rgba(211, 211, 211, 0.1);
+  }
+
+  & .modal-window,
+  & .modal-icon,
+  & .basicLightbox__placeholder,
+  & .modal-window__close-btn {
+    background-color: #c0c0c0;
+  }
+
+  & .modal-window__table-refs {
+    color: #696969;
+  }
 }

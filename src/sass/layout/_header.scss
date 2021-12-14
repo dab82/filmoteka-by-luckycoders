@@ -10,6 +10,7 @@
   background-position: 50% 50%;
   background-size: cover;
   height: 230px;
+  box-shadow: -1px 7px 33px 6px rgba(0, 0, 0, 0.6);
 
   @include min-width('medium') {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
@@ -28,6 +29,7 @@
 }
 
 .page-lib {
+  box-shadow: -1px 7px 33px 6px rgba(0, 0, 0, 0.6);
   @include min-width('small') {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url(../images/library/my-library_320.jpg);
