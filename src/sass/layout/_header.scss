@@ -117,7 +117,7 @@
   height: 3px;
   border-radius: 100px;
   background-color: var(--brand-orange-color);
-  transition: all 250ms ease-in-out;
+  transition: all var(--duration) var(--timing-function);
 }
 
 .menu__link.current::before {
@@ -128,7 +128,7 @@
   width: 100%;
   height: 3px;
   background-color: var(--brand-orange-color);
-  transition: all 250ms ease-in-out;
+  transition: all var(--duration) var(--timing-function);
 }
 
 .header-search {
@@ -151,7 +151,7 @@
   color: var(--primary-white-color);
   caret-color: var(--brand-orange-color);
   outline: none;
-
+  transition: all var(--duration) var(--timing-function);
   &::placeholder {
     @include font(14px, 400, 16px);
     color: var(--primary-white-color);
@@ -166,7 +166,6 @@
 .input:hover,
 .input:focus {
   border-bottom: 0.5px solid var(--brand-orange-color);
-  transition: all 0.25s cubic-bezier(0.41, 0.61, 0.69, 0.51);
 }
 
 .search__btn {

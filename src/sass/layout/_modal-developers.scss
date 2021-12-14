@@ -43,6 +43,7 @@
   margin: 5px auto;
   border-bottom: 5px solid;
   border-color: var(--brand-orange-color);
+  transition: transform var(--duration) var(--timing-function);
   @media screen and (min-width: 768px) {
     font-size: 40px;
   }
@@ -144,7 +145,7 @@
   // }
 
   transform: scale(1);
-  transition: transform;
+  transition: transform var(--duration) var(--timing-function);
 
   &:hover,
   &:focus {

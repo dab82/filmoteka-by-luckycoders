@@ -22,7 +22,7 @@
 .developers {
   cursor: pointer;
   text-decoration: underline;
-
+  transition: all var(--duration) var(--timing-function);
   &:hover,
   &:focus {
     color: var(--brand-orange-color);
