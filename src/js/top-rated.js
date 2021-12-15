@@ -6,7 +6,12 @@ import { fetchTrendingTvMovies } from './api/api-service-trend-tv';
 import { renderListCard } from './helpers/render-list-card';
 import { paginationSettings } from './helpers/pagination';
 import { STORAGE_HOME_KEY } from './common/keys';
-import { HOME_SEARCH_TYPE, TOP_SEARCH_TYPE, UPCOMING_SEARCH_TYPE, TRENDING_TV_SEARCH_TYPE } from './common/search-types';
+import {
+  HOME_SEARCH_TYPE,
+  TOP_SEARCH_TYPE,
+  UPCOMING_SEARCH_TYPE,
+  TRENDING_TV_SEARCH_TYPE,
+} from './common/search-types';
 import { setDataToStorageForMain } from './helpers/update-main-key';
 import { refs } from './common/refs';
 import { showLoader, hideLoader } from './helpers/spinner';
@@ -16,10 +21,13 @@ refs.popularBtn.addEventListener('click', onClickPopularBtn);
 refs.upcomingBtn.addEventListener('click', onClicUpcomingBtn);
 refs.trendingTvBtn.addEventListener('click', onClicTrendingTvBtn);
 
-
 async function onClickTopRatedBtn() {
   showLoader();
   refs.searchForm.value = '';
+  refs.topRatedBtn.classList.add('btn-tab-active');
+  refs.popularBtn.classList.remove('btn-tab-active');
+  refs.upcomingBtn.classList.remove('btn-tab-active');
+  refs.trendingTvBtn.classList.remove('btn-tab-active');
   try {
     const { results, total_results: totalItems } = await fetchTopMovies(
       paginationSettings.startPage,
@@ -38,6 +46,10 @@ async function onClickTopRatedBtn() {
 async function onClicUpcomingBtn() {
   showLoader();
   refs.searchForm.value = '';
+  refs.upcomingBtn.classList.add('btn-tab-active');
+  refs.popularBtn.classList.remove('btn-tab-active');
+  refs.topRatedBtn.classList.remove('btn-tab-active');
+  refs.trendingTvBtn.classList.remove('btn-tab-active');
   try {
     const { results, total_results: totalItems } = await fetchUpcomingMovies(
       paginationSettings.startPage,
@@ -57,6 +69,10 @@ async function onClicUpcomingBtn() {
 async function onClicTrendingTvBtn() {
   showLoader();
   refs.searchForm.value = '';
+  refs.trendingTvBtn.classList.add('btn-tab-active');
+  refs.popularBtn.classList.remove('btn-tab-active');
+  refs.topRatedBtn.classList.remove('btn-tab-active');
+  refs.upcomingBtn.classList.remove('btn-tab-active');
   try {
     const { results, total_results: totalItems } = await fetchTrendingTvMovies(
       paginationSettings.startPage,
@@ -73,9 +89,12 @@ async function onClicTrendingTvBtn() {
   }
 }
 
-
 export function onClickPopularBtn() {
   refs.searchForm.value = '';
+  refs.popularBtn.classList.add('btn-tab-active');
+  refs.trendingTvBtn.classList.remove('btn-tab-active');
+  refs.topRatedBtn.classList.remove('btn-tab-active');
+  refs.upcomingBtn.classList.remove('btn-tab-active');
   const dataFromStorage = localStorage.getItem(STORAGE_HOME_KEY);
   const parsedDataFromStorage = JSON.parse(dataFromStorage);
   paginationSettings.searchType = HOME_SEARCH_TYPE;
