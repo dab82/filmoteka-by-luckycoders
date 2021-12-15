@@ -38,7 +38,7 @@
   width: 112px;
   display: flex;
   align-items: center;
-  transition: all var(--duration) var(--timing-function);
+  //transition: all var(--duration) var(--timing-function);
   @include min-width('medium') {
     min-width: 125px;
     padding-left: 10px;
@@ -57,8 +57,7 @@
   box-shadow: 0px 8px 43px rgba(255, 107, 1, 0.6);
   border-radius: 5px;
   color: var(--primary-white-color);
-  transition: all var(--duration) var(--timing-function),
-    box-shadow var(--duration) var(--timing-function);
+  transition: box-shadow var(--duration) var(--timing-function);
 
   &:hover {
     box-shadow: none;
