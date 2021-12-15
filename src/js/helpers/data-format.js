@@ -26,11 +26,16 @@ export function dataFormat(data, genres) {
       return acc;
     }, []);
 
+    item.fullGenres = genresArray.map(genre => genre);
+    if (item.fullGenres.length === 0) {
+      item.fullGenres[0] = 'Genre unknown';
+    }
+
     if (genresArray.length > 3) {
       genresArray.splice(3);
       genresArray[2] = 'Other';
     } else if (genresArray.length === 0) {
-      genresArray[0] = 'Genre Unknown';
+      genresArray[0] = 'Genre unknown';
     }
 
     item.genres = genresArray;

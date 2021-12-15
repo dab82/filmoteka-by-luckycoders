@@ -6,6 +6,8 @@ import 'basiclightbox/dist/basicLightbox.min.css';
 import './sass/main.scss';
 
 //IMPORT JS
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import './js/preloader';
 import './js/popular-movies-render';
 import './js/search-movies-render';
