@@ -5,9 +5,11 @@ import { STORAGE_HOME_KEY, STORAGE_MAIN_KEY } from './common/keys';
 import { renderListCard } from './helpers/render-list-card';
 import { initPagination, paginationSettings } from './helpers/pagination';
 import { HOME_SEARCH_TYPE } from './common/search-types';
+import { refs } from './common/refs';
 
 //эта функция получает данные с бэкенда
 async function getPopularMoviesData(renderPage) {
+  refs.popularBtn.classList.add('btn-tab-active');
   try {
     //получить ответ от фетча axios->
     const { page, results, total_results: totalItems } = await fetchPopularMovies(renderPage);

@@ -30,6 +30,7 @@ function clickHome(e) {
   // возвращает кнопки ТОР-POPULAR
   hiddenSearchBtn();
   refs.searchForm.value = '';
+
   refs.pagination.classList.remove('visually-hidden');
   const storageData = JSON.parse(localStorage.getItem(STORAGE_HOME_KEY));
   paginationSettings.searchType = HOME_SEARCH_TYPE;
@@ -72,6 +73,10 @@ function isHiddenSearchBtn() {
 // возвращает кнопки ТОР-POPULAR
 function hiddenSearchBtn() {
   refs.searchBtnContainer.classList.remove('visually-hidden');
+  refs.popularBtn.classList.add('btn-tab-active');
+  refs.trendingTvBtn.classList.remove('btn-tab-active');
+  refs.topRatedBtn.classList.remove('btn-tab-active');
+  refs.upcomingBtn.classList.remove('btn-tab-active');
 }
 
 function activeBtnWatched() {
