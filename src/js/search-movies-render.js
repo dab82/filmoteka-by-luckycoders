@@ -23,10 +23,6 @@ async function onInput() {
     // Notify.failure('Please enter a movie name', settingsNotify);
     return;
   }
-  refs.popularBtn.classList.remove('btn-tab-active');
-  refs.trendingTvBtn.classList.remove('btn-tab-active');
-  refs.topRatedBtn.classList.remove('btn-tab-active');
-  refs.upcomingBtn.classList.remove('btn-tab-active');
   try {
     showLoader();
     const { results, total_results: totalItems } = await fetchSearchMovies(
@@ -38,7 +34,10 @@ async function onInput() {
       Notify.warning('Nothing found. Please try again', settingsNotify);
       return;
     }
-
+    refs.popularBtn.classList.remove('btn-tab-active');
+    refs.trendingTvBtn.classList.remove('btn-tab-active');
+    refs.topRatedBtn.classList.remove('btn-tab-active');
+    refs.upcomingBtn.classList.remove('btn-tab-active');
     paginationSettings.pagination.reset(totalItems);
     paginationSettings.pagination.searchQuery = searchQuery;
     paginationSettings.searchType = INPUT_SEARCH_TYPE;
