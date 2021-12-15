@@ -34,11 +34,12 @@ function selectFilm(event) {
 
     setDataToLocalStorage(data);
     renderModal(...data);
-
-    const btnRefs = {
+    
+    const btnRefs = {      
       addQueue: document.querySelector('[data-modal-queue]'),
       addWatched: document.querySelector('[data-modal-watched]'),
     };
+
     const filmToQueue = ApiLocalStorege.searchFilm(STORAGE_QUEUE_KEY);
     const filmToWatched = ApiLocalStorege.searchFilm(STORAGE_WATCHED_KEY);
     if (filmToQueue) {
@@ -48,7 +49,23 @@ function selectFilm(event) {
       removeMod(btnRefs.addWatched, 'watched');
     }
 
+    const deskription = document.querySelector('.description');
+    const title = document.querySelector('.modal-window__film-title');    
+    const width=document.body.clientWidth;
+    let styleDescription = window.getComputedStyle(deskription, null).getPropertyValue("height");
+    let styleTitle = window.getComputedStyle(title, null).getPropertyValue("height");
+    
+    if((width >= 1024 && parseInt(styleDescription) >= 220)) {
+      deskription.style.height="220px";
+      deskription.style.overflow="auto";
+    }
+    if((width >= 1024 && parseInt(styleTitle) >= 36) && parseInt(styleDescription) >= 200) {
+      deskription.style.height="182px";
+      deskription.style.overflow="auto";
+    }
+    
     toggleModal(event);
+    
 
     const closeModalBtn = document.querySelector('[data-modal-clos]');
     closeModalBtn.addEventListener('click', closeModal);
