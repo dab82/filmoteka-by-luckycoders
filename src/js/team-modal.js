@@ -145,7 +145,6 @@ function openModal(e) {
       modal.close();
       body.classList.remove('bg-scrolling-element-when-modal-open');
       backdrop.removeEventListener('click', closeBackdrop);
-      
     }
   }
 }

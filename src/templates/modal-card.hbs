@@ -7,7 +7,7 @@
       <img
         src='https://image.tmdb.org/t/p/w400/{{poster_path}}'
         alt='poster {{title}}'
-        loading='lazy'
+        class='lazyload'
       />
     {{else}}
       <img
@@ -41,7 +41,7 @@
       <tr>
         <td class='modal-window__table-refs'>Genre</td>
         <td class='modal-window__table-value'>
-          {{#each genres}}
+          {{#each fullGenres}}
             {{#if @last}}
               {{this}}
             {{else}}
